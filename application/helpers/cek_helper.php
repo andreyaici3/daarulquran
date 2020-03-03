@@ -106,6 +106,12 @@ function rulesPengumuman()
 	$ci->form_validation->set_rules('judul','Judul','required');
 }
 
+function rulesFoto()
+{
+	$ci = get_instance();
+	$ci->form_validation->set_rules('ket','Keterangan','required');
+}
+
 function rulesKelas()
 {
 	$ci = get_instance();

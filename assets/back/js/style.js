@@ -62,6 +62,8 @@ $(function(){
 
 	});
 
+	
+
 	$('.hpsModalPengumuman').on('click', function(){
 		$('#myModalLabel').html('Yakin Ingin Menghapus Pengumuman.?');
 		$('.modal-footer button[type=submit]').html('Hapus');
@@ -90,6 +92,23 @@ $(function(){
 
 		$.ajax({
 			url: 'http://localhost/dq/berita/delete',
+			method: 'post',
+			data: {id : id}
+		});
+
+	});
+
+	$('.hpsModalAlbum').on('click', function(){
+		$('#myModalLabel').html('Yakin Ingin Menghapus Album.?');
+		$('.modal-footer button[type=submit]').html('Hapus');
+		$('.modal-footer button[type=submit]').attr('class','btn btn-danger');
+		$('.bd').html('Jika Anda mengklik tombol hapus, maka data akan terhapus');
+		$('.modal-body form').attr('action','http://localhost/dq/galery/delete');
+
+		const id = $(this).data('id');
+
+		$.ajax({
+			url: 'http://localhost/dq/galery/delete',
 			method: 'post',
 			data: {id : id}
 		});
