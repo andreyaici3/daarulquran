@@ -75,4 +75,12 @@ class M_berita extends CI_Model {
 		
 	}
 
+	public function delete()
+	{
+		$id = $this->input->post('id');
+		$this->db->where('id_berita',$id);
+		$this->db->delete('tbl_berita');
+		fSukses('Data Berhasil Dihapus','berita');
+	}
+
 }

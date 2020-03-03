@@ -66,10 +66,11 @@ class Berita extends CI_Controller {
 		
 	}
 
+
 	public function delete()
 	{
 		if ($this->session->userdata('level') == 1) {
-			$this->M_guru->delete();
+			$this->M_berita->delete();
 		} else {
 			redirect('dashboard');
 		}

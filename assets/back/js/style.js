@@ -45,6 +45,57 @@ $(function(){
 
 	});
 
+	$('.hpsModalKelas').on('click', function(){
+		$('#myModalLabel').html('Yakin Ingin Menghapus Data Kelas.?');
+		$('.modal-footer button[type=submit]').html('Hapus');
+		$('.modal-footer button[type=submit]').attr('class','btn btn-danger');
+		$('.bd').html('Jika Anda mengklik tombol hapus, maka data akan terhapus');
+		$('.modal-body form').attr('action','http://localhost/dq/kelas/delete');
+
+		const id = $(this).data('id');
+
+		$.ajax({
+			url: 'http://localhost/dq/kelas/delete',
+			method: 'post',
+			data: {id : id}
+		});
+
+	});
+
+	$('.hpsModalPengumuman').on('click', function(){
+		$('#myModalLabel').html('Yakin Ingin Menghapus Pengumuman.?');
+		$('.modal-footer button[type=submit]').html('Hapus');
+		$('.modal-footer button[type=submit]').attr('class','btn btn-danger');
+		$('.bd').html('Jika Anda mengklik tombol hapus, maka data akan terhapus');
+		$('.modal-body form').attr('action','http://localhost/dq/pengumuman/delete');
+
+		const id = $(this).data('id');
+
+		$.ajax({
+			url: 'http://localhost/dq/pengumuman/delete',
+			method: 'post',
+			data: {id : id}
+		});
+
+	});
+
+	$('.hpsModalBerita').on('click', function(){
+		$('#myModalLabel').html('Yakin Ingin Menghapus Berita.?');
+		$('.modal-footer button[type=submit]').html('Hapus');
+		$('.modal-footer button[type=submit]').attr('class','btn btn-danger');
+		$('.bd').html('Jika Anda mengklik tombol hapus, maka data akan terhapus');
+		$('.modal-body form').attr('action','http://localhost/dq/berita/delete');
+
+		const id = $(this).data('id');
+
+		$.ajax({
+			url: 'http://localhost/dq/berita/delete',
+			method: 'post',
+			data: {id : id}
+		});
+
+	});
+
 	$('.hpsModalGuru').on('click', function(){
 		$('#myModalLabel').html('Yakin Ingin Menghapus Data Guru.?');
 		$('.modal-footer button[type=submit]').html('Hapus');

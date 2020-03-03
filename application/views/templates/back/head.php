@@ -6,6 +6,7 @@
         <meta name="description" content="">
         <meta name="author" content="">
         <title>Daarul Qur'an - <?= $title; ?></title>
+       
         <!-- Bootstrap Core CSS -->
         <link href="<?= base_url('assets/back/'); ?>css/bootstrap.min.css" rel="stylesheet">
         <!-- MetisMenu CSS -->
@@ -18,10 +19,10 @@
         <link href="<?= base_url('assets/back/'); ?>css/startmin.css" rel="stylesheet">
         <!-- Custom Fonts -->
         <link href="<?= base_url('assets/back/'); ?>css/font-awesome.min.css" rel="stylesheet" type="text/css">
-        <script src="<?= base_url('assets/back/ckeditor/'); ?>ckeditor.js"></script>
-        <script src="<?= base_url('assets/back/ckeditor/samples/'); ?>js/sample.js"></script>
-        <link rel="stylesheet" href="<?= base_url('assets/back/ckeditor/samples/'); ?>css/samples.css">
+         <script src="<?= base_url('assets/back/ckeditor/'); ?>ckeditor.js"></script>
+        <!-- <script src="<?= base_url('assets/back/ckeditor/samples/'); ?>js/sample.js"></script> -->
         <link rel="stylesheet" href="<?= base_url('assets/back/ckeditor/samples/'); ?>toolbarconfigurator/lib/codemirror/neo.css">
+        
 
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->

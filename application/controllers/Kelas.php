@@ -66,4 +66,13 @@ class Kelas extends CI_Controller
 		
 	}
 
+	public function delete()
+	{
+		if ($this->session->userdata('level') == 1) {
+			$this->M_kelas->delete();
+		} else {
+			redirect('dashboard');
+		}
+	}
+
 }
