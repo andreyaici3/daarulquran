@@ -29,7 +29,7 @@
                     		<td><?= $mp['tempat_lahir']; ?></td>
                     		<td><?= $mp['tanggal_lahir']; ?></td>
                     		<td><?= $mp['kelas']; ?></td>
-                    		<td><a href="">Lihat Detail</a></td>
+                    		<td><a href="<?= base_url('siswa/detail/' . $mp['id_siswa']); ?>">Lihat Detail</a></td>
                     		<td class="text-center">
                                <?= act('edit',$mp['id_siswa'],'siswa/edit/') ?>
                                <?= act('hapus',$mp['id_siswa'],'siswa/delete',['modal' => 'hpsModalSiswa']) ?>

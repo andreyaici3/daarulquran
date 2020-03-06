@@ -15,7 +15,7 @@
                 <h4 class="modal-title" id="myModalLabel">Modal title</h4>
             </div>
             <div class="modal-body">
-                <form method="POST" action="<?= base_url(); ?>">
+                <form method="POST" action="">
                     <div class="bd">
                     <div class="form-group">
                         <label>Kode MP</label>

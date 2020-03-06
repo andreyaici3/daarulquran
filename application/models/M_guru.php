@@ -49,6 +49,16 @@ class M_guru extends CI_Model
 		return $this->db->get_where('tbl_guru', ['id_guru' => $id])->row_array();
 	}
 
+	public function join($id)
+	{
+		$this->db->select('*');
+		$this->db->from('tbl_guru');
+		$this->db->join('tbl_mapel', 'tbl_guru.mata_pelajaran = tbl_mapel.id','left');
+		$this->db->where('id_guru',$id);
+		return $this->db->get()->row_array();
+		
+	}
+
 	public function edit()
 	{
 		$foto_lama = $this->input->post('foto_lama');

@@ -1,13 +1,33 @@
 $(function(){
 
+
+	const url = 'http://localhost/dq/'
+
 	$('.addMapel').on('click', function(){
 		$('#myModalLabel').html('Add New Mapel');
 		$('.modal-footer button[type=submit]').html('Add');
-		$('.modal-body form').attr('action','http://localhost/dq/mapel/add');
+		$('.modal-body form').attr('action',url + 'mapel/add');
 
 		$('#kode').val('');
 		$('#mapel').val('');
 		$('#id').val('');
+
+	});
+
+	$('.hpsModalFile').on('click', function(){
+		$('#myModalLabel').html('Yakin Ingin Menghapus Data.?');
+		$('.modal-footer button[type=submit]').html('Hapus');
+		$('.modal-footer button[type=submit]').attr('class','btn btn-danger');
+		$('.bd').html('Jika Anda mengklik tombol hapus, maka data akan terhapus');
+		$('.modal-body form').attr('action',url + 'upload/delete');
+
+		const id = $(this).data('id');
+
+		$.ajax({
+			url: url + 'upload/delete',
+			method: 'post',
+			data: {id : id}
+		});
 
 	});
 
@@ -140,7 +160,7 @@ $(function(){
 		const id = $(this).data('id');
 
 		$.ajax({
-			url: 'http://localhost/dq/mapel/getEdit',
+			url: url + 'mapel/getEdit',
 			method: 'post',
 			data: {id : id},
 			dataType: 'json',

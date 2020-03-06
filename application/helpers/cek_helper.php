@@ -71,6 +71,17 @@ function siswaJoinKelas()
 	return $ci->db->get()->result_array();	
 }
 
+function detailSiswaJoinKelas($id)
+{
+	$ci = get_instance();
+	$ci->db->select('*');
+	$ci->db->from('tbl_siswa');
+	$ci->db->join('tbl_kelas', 'tbl_siswa.id_kelas = tbl_kelas.id_kelas','left');
+	$ci->db->where('id_siswa',$id);
+	
+	return $ci->db->get()->row_array();	
+}
+
 function _lib($view, $data)
 {
 	$ci = get_instance();

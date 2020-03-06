@@ -37,6 +37,9 @@
                     <a href="<?= base_url('galery'); ?>"><i class="fa fa-image fa-fw"></i> Galery</a>
                 </li>
                 <li>
+                    <a href="<?= base_url('upload'); ?>"><i class="fa fa-file fa-fw"></i> Upload Document</a>
+                </li>
+                <li>
                     <a href="<?= base_url('auth/logout'); ?>"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
                 </li>
             </ul>

@@ -36,7 +36,7 @@
 					        </div>
 					        <div class="panel-body">
 	        			
-			        			<img src="<?= base_url('assets/images/galery/' . $fto['foto']); ?>" width="180px" height="150">
+			        			<img src="<?= base_url('assets/images/galery/' . $fto['foto']); ?>" width="100%" height="150" class="fixed">
 			        			
 			        		</div>
 			        		<div class="panel-footer mt-0">

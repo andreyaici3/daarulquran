@@ -13,6 +13,24 @@ class Siswa extends CI_Controller {
 		}
 	}
 
+	public function detail($id)
+	{
+		if ($this->session->userdata('level') == 1) {
+			$data = [
+				'title' => 'Admin',
+				'title2' => 'Detail Siswa',
+				'guru'	=> detailSiswaJoinKelas($id),
+				'setup' => setWeb()
+			];
+
+			_lib('admin/siswa/detail', $data);
+
+		} else {
+			redirect('dashboard');
+		}
+		
+	}
+
 	public function add()
 	{
 		if ($this->session->userdata('level') == 1) {

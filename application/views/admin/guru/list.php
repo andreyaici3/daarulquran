@@ -31,7 +31,7 @@
                     		<td><?= $mp['tanggal_lahir']; ?></td>
                     		<td><?= $mp['nama_mapel']; ?></td>
                     		<td><?= $mp['pendidikan']; ?></td>
-                    		<td><a href="">Lihat Detail</a></td>
+                    		<td><a href="<?= base_url('guru/detail/' . $mp['id_guru']); ?>">Lihat Detail</a></td>
                     		<td class="text-center">
                                 <a class="btn btn-xs btn-success" href="<?= base_url('guru/edit/').urlencode( base64_encode(base64_encode($mp['id_guru']))); ?>"><i class="fa fa-pencil fa-fw"> </i></a>
                                 <a class="btn btn-xs btn-danger hpsModalGuru" data-id="<?= $mp['id_guru']; ?>" data-toggle="modal" data-target="#myModal"><i class="fa fa-trash fa-fw"> </i></a>
