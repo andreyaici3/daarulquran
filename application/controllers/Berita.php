@@ -13,11 +13,13 @@ class Berita extends CI_Controller {
 				'berita' => beritaJoinUser()
 			];
 
-			_lib('admin/berita/list', $data);		
+			_lib('admin/berita/list', $data);
 		} else {
 			redirect('dashboard');
 		}
 	}
+
+
 
 	public function add()
 	{
@@ -74,6 +76,24 @@ class Berita extends CI_Controller {
 		} else {
 			redirect('dashboard');
 		}
+	}
+
+	public function post($tahun,$bulan,$slug)
+	{
+		$data = [
+			'title' => 'Admin',
+			'berita' => $this->M_berita->getDetailBerita($tahun,$bulan,$slug),
+			'latest' => $this->M_berita->latestBerita()
+		];
+
+		$this->load->view('templates/front/head',$data);
+		$this->load->view('templates/front/header');
+		$this->load->view('templates/front/menu');	
+		$this->load->view('front/beritaDetail');
+		$this->load->view('templates/front/footer');
+		$this->load->view('templates/front/foot');
+
+		
 	}
 
 }

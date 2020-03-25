@@ -6,20 +6,19 @@
 			<div class="row">
 				<div class="col">
 					<div class="section_title_container text-center">
-						<h2 class="section_title">The Best Tutors in Town</h2>
-						<div class="section_subtitle"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vel gravida arcu. Vestibulum feugiat, sapien ultrices fermentum congue, quam velit venenatis sem</p></div>
+						<h2 class="section_title">Kontributor Mahasiswa</h2>
+						<div class="section_subtitle"><p>Orang orang yang berjasa di kalangan mahasiswa</p></div>
 					</div>
 				</div>
 			</div>
 			<div class="row team_row">
-				
 				<!-- Team Item -->
 				<div class="col-lg-3 col-md-6 team_col">
 					<div class="team_item">
-						<div class="team_image"><img src="<?= base_url('assets/front/'); ?>images/team_1.jpg" alt=""></div>
+						<div class="team_image"><img src="<?= base_url('assets/images/kepsek.jpeg'); ?>" alt=""></div>
 						<div class="team_body">
-							<div class="team_title"><a href="#">Jacke Masito</a></div>
-							<div class="team_subtitle">Marketing & Management</div>
+							<div class="team_title"><a href="#">Deni Agusta</a></div>
+							<div class="team_subtitle">Web Developer & IT Support</div>
 							<div class="social_list">
 								<ul>
 									<li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
@@ -34,10 +33,10 @@
 				<!-- Team Item -->
 				<div class="col-lg-3 col-md-6 team_col">
 					<div class="team_item">
-						<div class="team_image"><img src="<?= base_url('assets/front/'); ?>images/team_2.jpg" alt=""></div>
+						<div class="team_image"><img src="<?= base_url('assets/images/kepsek.jpeg'); ?>" alt=""></div>
 						<div class="team_body">
-							<div class="team_title"><a href="#">William James</a></div>
-							<div class="team_subtitle">Designer & Website</div>
+							<div class="team_title"><a href="#">Puang Andini</a></div>
+							<div class="team_subtitle">Design & Editing</div>
 							<div class="social_list">
 								<ul>
 									<li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
@@ -52,10 +51,10 @@
 				<!-- Team Item -->
 				<div class="col-lg-3 col-md-6 team_col">
 					<div class="team_item">
-						<div class="team_image"><img src="<?= base_url('assets/front/'); ?>images/team_3.jpg" alt=""></div>
+						<div class="team_image"><img src="<?= base_url('assets/images/kepsek.jpeg'); ?>" alt=""></div>
 						<div class="team_body">
-							<div class="team_title"><a href="#">John Tyler</a></div>
-							<div class="team_subtitle">Quantum mechanics</div>
+							<div class="team_title"><a href="#">Ricky Permana</a></div>
+							<div class="team_subtitle">Fotografer & Videografer</div>
 							<div class="social_list">
 								<ul>
 									<li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
@@ -70,10 +69,10 @@
 				<!-- Team Item -->
 				<div class="col-lg-3 col-md-6 team_col">
 					<div class="team_item">
-						<div class="team_image"><img src="<?= base_url('assets/front/'); ?>images/team_4.jpg" alt=""></div>
+						<div class="team_image"><img src="<?= base_url('assets/images/kepsek.jpeg'); ?>" alt=""></div>
 						<div class="team_body">
-							<div class="team_title"><a href="#">Veronica Vahn</a></div>
-							<div class="team_subtitle">Math & Physics</div>
+							<div class="team_title"><a href="#">Tahrul Mutaqin</a></div>
+							<div class="team_subtitle">Siswa MA Daarul Qur'an</div>
 							<div class="social_list">
 								<ul>
 									<li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
@@ -84,6 +83,8 @@
 						</div>
 					</div>
 				</div>
+
+
 
 			</div>
 		</div>

@@ -71,6 +71,12 @@
 	                
 	            </div>	
         	</div>
+        	<div class="col-md-12">
+		    	<div class="form-group">
+	                <label>Quote</label>
+	                <input class="form-control" name="quote" placeholder="Quotes ... " id="quote" type="text" value="<?= $siswa['quote']; ?>">
+	            </div>
+        	</div>
 
         	<div class="col-md-12">
         		<button type="submit" class="btn btn-primary">Edit</button>

@@ -36,12 +36,12 @@ $(function(){
 		$('.modal-footer button[type=submit]').html('Hapus');
 		$('.modal-footer button[type=submit]').attr('class','btn btn-danger');
 		$('.bd').html('Jika Anda mengklik tombol hapus, maka data akan terhapus');
-		$('.modal-body form').attr('action', url +  'mapel/delete');
+		$('.modal-body form').attr('action','http://localhost/dq/mapel/delete');
 
 		const id = $(this).data('id');
 
 		$.ajax({
-			url: url + 'mapel/delete',
+			url: 'http://localhost/dq/mapel/delete',
 			method: 'post',
 			data: {id : id}
 		});
@@ -53,12 +53,12 @@ $(function(){
 		$('.modal-footer button[type=submit]').html('Hapus');
 		$('.modal-footer button[type=submit]').attr('class','btn btn-danger');
 		$('.bd').html('Jika Anda mengklik tombol hapus, maka data akan terhapus');
-		$('.modal-body form').attr('action', url + 'siswa/delete');
+		$('.modal-body form').attr('action','http://localhost/dq/siswa/delete');
 
 		const id = $(this).data('id');
 
 		$.ajax({
-			url: url + 'siswa/delete',
+			url: 'http://localhost/dq/siswa/delete',
 			method: 'post',
 			data: {id : id}
 		});
@@ -70,12 +70,12 @@ $(function(){
 		$('.modal-footer button[type=submit]').html('Hapus');
 		$('.modal-footer button[type=submit]').attr('class','btn btn-danger');
 		$('.bd').html('Jika Anda mengklik tombol hapus, maka data akan terhapus');
-		$('.modal-body form').attr('action', url + 'kelas/delete');
+		$('.modal-body form').attr('action','http://localhost/dq/kelas/delete');
 
 		const id = $(this).data('id');
 
 		$.ajax({
-			url: url + 'kelas/delete',
+			url: 'http://localhost/dq/kelas/delete',
 			method: 'post',
 			data: {id : id}
 		});
@@ -89,12 +89,12 @@ $(function(){
 		$('.modal-footer button[type=submit]').html('Hapus');
 		$('.modal-footer button[type=submit]').attr('class','btn btn-danger');
 		$('.bd').html('Jika Anda mengklik tombol hapus, maka data akan terhapus');
-		$('.modal-body form').attr('action',url + 'pengumuman/delete');
+		$('.modal-body form').attr('action','http://localhost/dq/pengumuman/delete');
 
 		const id = $(this).data('id');
 
 		$.ajax({
-			url: url + 'pengumuman/delete',
+			url: 'http://localhost/dq/pengumuman/delete',
 			method: 'post',
 			data: {id : id}
 		});
@@ -106,12 +106,12 @@ $(function(){
 		$('.modal-footer button[type=submit]').html('Hapus');
 		$('.modal-footer button[type=submit]').attr('class','btn btn-danger');
 		$('.bd').html('Jika Anda mengklik tombol hapus, maka data akan terhapus');
-		$('.modal-body form').attr('action', url + 'berita/delete');
+		$('.modal-body form').attr('action','http://localhost/dq/berita/delete');
 
 		const id = $(this).data('id');
 
 		$.ajax({
-			url: url + 'berita/delete',
+			url: 'http://localhost/dq/berita/delete',
 			method: 'post',
 			data: {id : id}
 		});
@@ -123,12 +123,12 @@ $(function(){
 		$('.modal-footer button[type=submit]').html('Hapus');
 		$('.modal-footer button[type=submit]').attr('class','btn btn-danger');
 		$('.bd').html('Jika Anda mengklik tombol hapus, maka data akan terhapus');
-		$('.modal-body form').attr('action',url + 'galery/delete');
+		$('.modal-body form').attr('action','http://localhost/dq/galery/delete');
 
 		const id = $(this).data('id');
 
 		$.ajax({
-			url: url + 'galery/delete',
+			url: 'http://localhost/dq/galery/delete',
 			method: 'post',
 			data: {id : id}
 		});
@@ -140,12 +140,12 @@ $(function(){
 		$('.modal-footer button[type=submit]').html('Hapus');
 		$('.modal-footer button[type=submit]').attr('class','btn btn-danger');
 		$('.bd').html('Jika Anda mengklik tombol hapus, maka data akan terhapus');
-		$('.modal-body form').attr('action', url + 'guru/delete');
+		$('.modal-body form').attr('action','http://localhost/dq/guru/delete');
 
 		const id = $(this).data('id');
 
 		$.ajax({
-			url: url + 'guru/delete',
+			url: 'http://localhost/dq/guru/delete',
 			method: 'post',
 			data: {id : id}
 		});
@@ -155,7 +155,7 @@ $(function(){
 	$('.ubhModal').on('click', function(){
 		$('#myModalLabel').html('Edit Mapel');
 		$('.modal-footer button[type=submit]').html('Edit');
-		$('.modal-body form').attr('action',url + 'mapel/edit');
+		$('.modal-body form').attr('action','http://localhost/dq/mapel/edit');
 
 		const id = $(this).data('id');
 

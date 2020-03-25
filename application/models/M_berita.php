@@ -61,7 +61,7 @@ class M_berita extends CI_Model {
 
 		$data = [
 			'judul_berita' => htmlspecialchars($this->input->post('judul',true)),
-			'slug_berita' => date('Y/d/') . 'berita/' . url_title($this->input->post('judul'),'dash',true),
+			'slug_berita' => date('Y/d/') . '/' . url_title($this->input->post('judul'),'dash',true),
 			'isi_berita' => $this->input->post('isi'),
 			'gambar_berita' => $gambar_berita,
 			'terakhir_diupdate' => time(),
@@ -81,6 +81,34 @@ class M_berita extends CI_Model {
 		$this->db->where('id_berita',$id);
 		$this->db->delete('tbl_berita');
 		fSukses('Data Berhasil Dihapus','berita');
+	}
+
+	public function getDetailBerita($tahun,$bulan,$slug)
+	{
+		$url = $tahun . '/' . $bulan . '/' . $slug;
+		$this->db->select('*');
+		$this->db->from('tbl_berita');
+		$this->db->join('tbl_user','tbl_berita.id_user = tbl_user.id','left');
+		$this->db->where('slug_berita',$url);
+		return $this->db->get()->row_array();
+	}
+
+	public function _totalBerita()
+	{
+		$this->db->select('*');
+		$this->db->from('tbl_berita');
+		$this->db->join('tbl_user','tbl_user.id = tbl_berita.id_user','left');
+		$this->db->order_by('id_berita','DESC');
+		return $this->db->get()->result_array(); 		
+	}
+
+	public function latestBerita()
+	{
+		$this->db->select('*');
+		$this->db->from('tbl_berita');
+		$this->db->order_by('id_berita','DESC');
+		$this->db->limit(10);
+		return $this->db->get()->result_array(); 		
 	}
 
 }

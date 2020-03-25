@@ -132,6 +132,14 @@ class M_galery extends CI_Model {
 
 	}
 
+	public function joinFoto($id){
+		$this->db->select('*');
+		$this->db->from('tbl_foto');
+		$this->db->join('tbl_album','tbl_foto.id_album = tbl_album.id_album');
+		return $this->db->get()->result_array();
+
+	}
+
 
 	
 }

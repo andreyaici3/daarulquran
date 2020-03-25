@@ -20,7 +20,7 @@
         <!-- Custom Fonts -->
         <link href="<?= base_url('assets/back/'); ?>css/font-awesome.min.css" rel="stylesheet" type="text/css">
          <script src="<?= base_url('assets/back/ckeditor/'); ?>ckeditor.js"></script>
-        <!-- <script src="<?= base_url('assets/back/ckeditor/samples/'); ?>js/sample.js"></script> -->
+        <script src="<?= base_url('assets/back/ckeditor/samples/'); ?>js/sample.js"></script>
         <link rel="stylesheet" href="<?= base_url('assets/back/ckeditor/samples/'); ?>toolbarconfigurator/lib/codemirror/neo.css">
         
 

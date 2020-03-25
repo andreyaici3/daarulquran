@@ -54,6 +54,12 @@
 	            </div>	
         	</div>
         	<div class="col-md-12">
+		    	<div class="form-group">
+	                <label>Quote</label>
+	                <input class="form-control" name="quote" placeholder="Quotes ... " id="quote" type="text" value="<?= set_value('quote'); ?>">
+	            </div>
+        	</div>
+        	<div class="col-md-12">
         		<button type="submit" class="btn btn-primary">Add</button>
         		<button type="reset" class="btn btn-danger">Reset</button>
         	</div>

@@ -66,7 +66,7 @@ function siswaJoinKelas()
 	$ci->db->select('*');
 	$ci->db->from('tbl_siswa');
 	$ci->db->join('tbl_kelas', 'tbl_siswa.id_kelas = tbl_kelas.id_kelas','left');
-	$ci->db->order_by('kelas','ASC');
+	$ci->db->order_by('nama_siswa','ASC');
 	
 	return $ci->db->get()->result_array();	
 }

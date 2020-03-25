@@ -30,6 +30,7 @@ class M_siswa extends CI_Model {
 			'tempat_lahir' => htmlspecialchars($this->input->post('tempat_lahir',true)),
 			'tanggal_lahir' => htmlspecialchars($this->input->post('tanggal_lahir',true)),
 			'id_kelas' => htmlspecialchars($this->input->post('id_kelas',true)),
+			'quote' => htmlspecialchars($this->input->post('quote',true)),
 			'foto_siswa' => $name
 		];
 
@@ -85,6 +86,7 @@ class M_siswa extends CI_Model {
 			'tempat_lahir' => htmlspecialchars($this->input->post('tempat_lahir',true)),
 			'tanggal_lahir' => htmlspecialchars($this->input->post('tanggal_lahir',true)),
 			'id_kelas' => htmlspecialchars($this->input->post('id_kelas',true)),
+			'quote' => htmlspecialchars($this->input->post('quote',true)),
 			'foto_siswa' => $foto
 		];
 

@@ -40,6 +40,9 @@
                     <a href="<?= base_url('upload'); ?>"><i class="fa fa-file fa-fw"></i> Upload Document</a>
                 </li>
                 <li>
+                    <a href="<?= base_url('auth/setting'); ?>"><i class="fa fa-cog fa-fw"></i> Setting Web</a>
+                </li>
+                <li>
                     <a href="<?= base_url('auth/logout'); ?>"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
                 </li>
             </ul>

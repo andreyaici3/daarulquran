@@ -11,12 +11,12 @@
 	</div>
 	<nav class="menu_nav">
 		<ul class="menu_mm">
-			<li class="menu_mm"><a href="index.html">Home</a></li>
-			<li class="menu_mm"><a href="#">About</a></li>
-			<li class="menu_mm"><a href="#">Courses</a></li>
-			<li class="menu_mm"><a href="#">Blog</a></li>
-			<li class="menu_mm"><a href="#">Page</a></li>
-			<li class="menu_mm"><a href="contact.html">Contact</a></li>
+			<li class="menu_mm"><a href="<?= base_url(); ?>">Home</a></li>
+			<li class="menu_mm"><a href="<?= base_url('home/berita'); ?>">Berita</a></li>
+			<li class="menu_mm"><a href="<?= base_url('home/pengumuman'); ?>">Pengumuman</a></li>
+			<li class="menu_mm"><a href="<?= base_url('home/galery'); ?>">Galery</a></li>
+			<li class="menu_mm"><a href="<?= base_url('home/download'); ?>">Download</a></li>
+			<li class="menu_mm"><a href="<?= base_url('home/about'); ?>">Tentang</a></li>
 		</ul>
 	</nav>
 </div>
