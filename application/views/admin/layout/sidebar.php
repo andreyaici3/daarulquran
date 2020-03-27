@@ -15,33 +15,52 @@
                 <li>
                     <a href="<?= base_url('admin'); ?>"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
                 </li>
-                <li>
-                    <a href="<?= base_url('mapel'); ?>"><i class="fa fa-table fa-fw"></i> Mata Pelajaran</a>
+                 <li>
+                    <a href="#"><i class="fa fa-database fa-fw"></i> Master Data<span class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level">
+                        <li>
+                            <a href="<?= base_url('mapel'); ?>"><i class="fa fa-table fa-fw"></i> Mata Pelajaran</a>
+                        </li>
+                        <li>
+                            <a href="<?= base_url('kelas'); ?>"><i class="fa fa-institution fa-fw"></i> Data Kelas</a>
+                        </li>
+                        <li>
+                            <a href="<?= base_url('guru'); ?>"><i class="fa fa-users fa-fw"></i> Data Guru</a>
+                        </li>
+                        <li>
+                            <a href="<?= base_url('siswa'); ?>"><i class="fa fa-mortar-board fa-fw"></i> Data Siswa</a>
+                        </li>
+                    </ul>
                 </li>
-                <li>
-                    <a href="<?= base_url('kelas'); ?>"><i class="fa fa-institution fa-fw"></i> Data Kelas</a>
+                 <li>
+                    <a href="#"><i class="fa fa-indent fa-fw"></i> Content<span class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level">
+                        <li>
+                            <a href="<?= base_url('pengumuman'); ?>"><i class="fa fa-file fa-fw"></i> Pengumuman</a>
+                        </li>
+                        <li>
+                            <a href="<?= base_url('berita'); ?>"><i class="fa fa-newspaper-o fa-fw"></i> Berita</a>
+                        </li>
+                        <li>
+                            <a href="<?= base_url('galery'); ?>"><i class="fa fa-image fa-fw"></i> Galery</a>
+                        </li>
+                        <li>
+                            <a href="<?= base_url('upload'); ?>"><i class="fa fa-file fa-fw"></i> Upload Document</a>
+                        </li>
+                    </ul>
                 </li>
+
+                
                 <li>
-                    <a href="<?= base_url('guru'); ?>"><i class="fa fa-users fa-fw"></i> Data Guru</a>
+                    <a href="#"><i class="fa fa-cog fa-fw"></i> Settings<span class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level">
+                        <li>
+                            <a href="<?= base_url('setting/slider'); ?>"><i class="fa fa-image fa-fw"></i> Slider Box</a>
+                        </li>
+                    </ul>
                 </li>
-                <li>
-                    <a href="<?= base_url('siswa'); ?>"><i class="fa fa-mortar-board fa-fw"></i> Data Siswa</a>
-                </li>
-                <li>
-                    <a href="<?= base_url('pengumuman'); ?>"><i class="fa fa-file fa-fw"></i> Pengumuman</a>
-                </li>
-                <li>
-                    <a href="<?= base_url('berita'); ?>"><i class="fa fa-newspaper-o fa-fw"></i> Berita</a>
-                </li>
-                <li>
-                    <a href="<?= base_url('galery'); ?>"><i class="fa fa-image fa-fw"></i> Galery</a>
-                </li>
-                <li>
-                    <a href="<?= base_url('upload'); ?>"><i class="fa fa-file fa-fw"></i> Upload Document</a>
-                </li>
-                <li>
-                    <a href="<?= base_url('auth/setting'); ?>"><i class="fa fa-cog fa-fw"></i> Setting Web</a>
-                </li>
+                
+                
                 <li>
                     <a href="<?= base_url('auth/logout'); ?>"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
                 </li>

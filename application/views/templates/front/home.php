@@ -6,15 +6,15 @@
 			<!-- Home Slider -->
 			<div class="owl-carousel owl-theme home_slider">
 				
-				<!-- Home Slider Item -->
+				<!-- Home Slider Item1 -->
 				<div class="owl-item">
-					<div class="home_slider_background" style="background-image:url(<?= base_url('assets/front/images/home_slider_1.jpg'); ?>"></div>
+					<div class="home_slider_background" style="background-image:url(<?= base_url('assets/images/config/' . $setup['slider_1_foto']); ?>"></div>
 					<div class="home_slider_content">
 						<div class="container">
 							<div class="row">
 								<div class="col text-center">
-									<div class="home_slider_title">The Premium System Education</div>
-									<div class="home_slider_subtitle">Future Of Education Technology</div>
+									<div class="home_slider_title" style="color: black;"><?= $setup['slider_1_judul']; ?></div>
+									<div class="home_slider_subtitle"><?= $setup['slider_1_sub']; ?> </div>
 									<div class="home_slider_form_container">
 										
 									</div>
@@ -24,6 +24,26 @@
 					</div>
 				</div>
 
+				<!-- Home Slider Item1 -->
+				<div class="owl-item">
+					<div class="home_slider_background" style="background-image:url(<?= base_url('assets/images/config/' . $setup['slider_2_foto']); ?>"></div>
+					<div class="home_slider_content">
+						<div class="container">
+							<div class="row">
+								<div class="col text-center">
+									<div class="home_slider_title" style="color: black;"><?= $setup['slider_2_judul']; ?></div>
+									<div class="home_slider_subtitle"><?= $setup['slider_2_sub']; ?> </div>
+									<div class="home_slider_form_container">
+										
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+
+				
 				
 
 			</div>
