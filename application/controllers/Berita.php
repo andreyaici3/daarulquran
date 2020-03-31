@@ -92,8 +92,6 @@ class Berita extends CI_Controller {
 		$this->load->view('front/beritaDetail');
 		$this->load->view('templates/front/footer');
 		$this->load->view('templates/front/foot');
-
-		
 	}
 
 }

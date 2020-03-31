@@ -21,7 +21,7 @@
                                 <button class="btn btn-lg btn-success btn-block">Login</button>
                             </fieldset>
                             <hr>
-                            <div class="text-center"><a href="<?= base_url('auth/registration'); ?>">Not Ready Account?, Registered Here!</a></div>
+                            <!-- <div class="text-center"><a href="<?= base_url('auth/registration'); ?>">Not Ready Account?, Registered Here!</a></div> -->
                         </form>
                     </div>
                 </div>

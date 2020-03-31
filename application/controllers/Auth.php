@@ -17,6 +17,7 @@ class Auth extends CI_Controller {
 
 	public function registration()
 	{
+		redirect('auth');
 		$this->form_validation->set_rules('name','Name','required|trim');
 		$this->form_validation->set_rules('email','Email','required|valid_email|trim');
 		$this->form_validation->set_rules('password1','Password','required|min_length[5]|matches[password2]|trim');

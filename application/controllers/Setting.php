@@ -6,7 +6,7 @@ class Setting extends CI_Controller {
 		if ($this->session->userdata('level') == 1) {
 			$data = [
 				'title' => 'Admin',
-				'title2' => 'Slider',
+				'title2' => 'images',
 				'setup' => setWeb()
 			];
 
@@ -24,4 +24,29 @@ class Setting extends CI_Controller {
 		}	
 		
 	}
+
+	public function hahay(){
+		if ($this->session->userdata('level') == 1) {
+			$this->M_upload->headerC();
+		} else {
+			redirect('dashboard');
+		}	
+		
+	}
+
+	public function headerC(){
+		if ($this->session->userdata('level') == 1) {
+			$data = [
+				'title' => 'Admin',
+				'title2' => 'header',
+				'setup' => setWeb()
+			];
+
+			_lib('admin/setting/header', $data);		
+		} else {
+			redirect('dashboard');
+		}
+	}
+
+
 }

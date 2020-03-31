@@ -41,6 +41,23 @@
 						</div>
 					</div>
 				</div>
+				<!-- Home Slider Item1 -->
+				<div class="owl-item">
+					<div class="home_slider_background" style="background-image:url(<?= base_url('assets/images/config/' . $setup['slider_3_foto']); ?>"></div>
+					<div class="home_slider_content">
+						<div class="container">
+							<div class="row">
+								<div class="col text-center">
+									<div class="home_slider_title" style="color: black;"><?= $setup['slider_3_judul']; ?></div>
+									<div class="home_slider_subtitle"><?= $setup['slider_3_sub']; ?> </div>
+									<div class="home_slider_form_container">
+										
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
 
 
 				

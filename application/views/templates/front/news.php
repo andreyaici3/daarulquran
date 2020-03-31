@@ -4,8 +4,8 @@
 			<div class="row">
 				<div class="col">
 					<div class="section_title_container text-center">
-						<h2 class="section_title">Pengumuman</h2>
-						<div class="section_subtitle"><p>Pengumuman ini ditujukan kepada seluruh siswa, siswi yang terdaftar di yayasan daarul qur'an, seperti info tugas, ataupun agenda kegiatan</p></div>
+						<h2 class="section_title"><?= $setup['header_4']; ?></h2>
+						<div class="section_subtitle"><p><?= $setup['sub_header_4']; ?></p></div>
 					</div>
 				</div>
 			</div>

@@ -50,12 +50,27 @@
                     </ul>
                 </li>
 
+                <li>
+                    <a href="#"><i class="fa fa-indent fa-fw"></i> PPDB<span class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level">
+                         <li>
+                            <a href="<?= base_url('ppdb/view'); ?>"><i class="fa fa-file fa-fw"></i> Lihat Data</a>
+                        </li>
+                        <li>
+                            <a href="<?= base_url('ppdb/status'); ?>"><i class="fa fa-file fa-fw"></i> Status Penerimaan</a>
+                        </li>
+                    </ul>
+                </li>
+
                 
                 <li>
                     <a href="#"><i class="fa fa-cog fa-fw"></i> Settings<span class="fa arrow"></span></a>
                     <ul class="nav nav-second-level">
                         <li>
-                            <a href="<?= base_url('setting/slider'); ?>"><i class="fa fa-image fa-fw"></i> Slider Box</a>
+                            <a href="<?= base_url('setting/slider'); ?>"><i class="fa fa-image fa-fw"></i> Images</a>
+                        </li>
+                        <li>
+                            <a href="<?= base_url('setting/headerC'); ?>"><i class="fa fa-list fa-fw"></i> Header Home</a>
                         </li>
                     </ul>
                 </li>

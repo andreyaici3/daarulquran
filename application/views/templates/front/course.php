@@ -5,8 +5,8 @@
 			<div class="row">
 				<div class="col">
 					<div class="section_title_container text-center">
-						<h2 class="section_title">Berita Terbaru</h2>
-						<div class="section_subtitle"><p>Berita terbaru di post dalam website ini</p></div>
+						<h2 class="section_title"><?= $setup['header_2']; ?></h2>
+						<div class="section_subtitle"><p><?= $setup['sub_header_2']; ?></p></div>
 					</div>
 				</div>
 			</div>
