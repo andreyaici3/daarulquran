@@ -193,9 +193,14 @@ class M_ppdb extends CI_Model {
 		$this->upload->data();	
 
 		$this->upload->display_errors();
+	}
 
-
-		
+	public function delete()
+	{
+		$id = $this->input->post('id');
+		$this->db->where('id_siswa',$id);
+		$this->db->delete('master_data_siswa');
+		fSukses('Data Berhasil Dihapus','ppdb/view');
 	}
 
 

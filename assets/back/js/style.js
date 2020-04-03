@@ -48,6 +48,8 @@ $(function(){
 
 	});
 
+	
+
 	$('.hpsModalSiswa').on('click', function(){
 		$('#myModalLabel').html('Yakin Ingin Menghapus Data Siswa.?');
 		$('.modal-footer button[type=submit]').html('Hapus');
@@ -59,6 +61,23 @@ $(function(){
 
 		$.ajax({
 			url: url + 'siswa/delete',
+			method: 'post',
+			data: {id : id}
+		});
+
+	});
+
+	$('.hpsModalSiswaPpdb').on('click', function(){
+		$('#myModalLabel').html('Yakin Ingin Menghapus List Data Siswa PPDB.?');
+		$('.modal-footer button[type=submit]').html('Hapus');
+		$('.modal-footer button[type=submit]').attr('class','btn btn-danger');
+		$('.bd').html('Jika Anda mengklik tombol hapus, maka data akan terhapus');
+		$('.modal-body form').attr('action', url + 'ppdb/delete');
+
+		const id = $(this).data('id');
+
+		$.ajax({
+			url: url + 'ppdb/delete',
 			method: 'post',
 			data: {id : id}
 		});

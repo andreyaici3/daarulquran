@@ -2,7 +2,7 @@
 <div class="col-lg">
     <div class="panel panel-primary">
         <div class="panel-heading">
-            <a class="btn btn-md btn-primary addMapel" href="<?= base_url('guru/add'); ?>"><i class="fa fa-plus fa-fw"></i> Tambah Siswa Manual</a>
+            LIST SISWA YANG MELAKUKAN PPDB ONLINE
         </div>
         <div class="panel-body">
             <?= $this->session->flashdata('msgi'); ?>
