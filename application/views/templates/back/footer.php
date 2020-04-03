@@ -19,7 +19,6 @@
         <script src="<?= base_url('assets/back/'); ?>js/style.js"></script>
 
         <!-- datepicker -->
-        <script type="text/javascript" src="https://repo.rachmat.id/jquery-1.12.4.js"></script>
         <script type="text/javascript" src="https://repo.rachmat.id/jquery-ui-1.12.1/jquery-ui.js"></script>
         
 
@@ -27,7 +26,15 @@
             $(function(){
               $("#datepicker").datepicker();
             });
-        </script>
+
+            $(function(){
+              $("#datepickerAyah").datepicker();
+            });
+
+            $(function(){
+              $("#datepickerIbu").datepicker();
+            });
+        </script> -->
 
         <!-- Page-Level Demo Scripts - Tables - Use for reference -->
         <script>

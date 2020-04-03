@@ -12,26 +12,26 @@
                             <fieldset>
                                 <div class="form-group">
                                     <label for="nama">Nama Lengkap*</label>
-                                    <input type="text" name="nama_lengkap" id="nama" class="form-control">
+                                    <input type="text" name="nama_lengkap" id="nama" class="form-control" required>
                                     <?= form_error('nama_lengkap', '<small class="text-danger pl-3 mt-3">', '</small>'); ?>
                                 </div>
                                 <div class="form-group">
-                                    <label for="wa">No Whatsapp*</label>
-                                    <input type="number" name="wa" id="wa" class="form-control">
+                                    <label for="wa">No Yang bisa dihubungi*</label>
+                                    <input type="number" name="wa" id="wa" class="form-control" placeholder="Whatsapp direkomendasikan" required>
                                     <?= form_error('wa', '<small class="text-danger pl-3 mt-3">', '</small>'); ?>
                                 </div>
                                 <div class="form-group">
                                     <label for="tempatLahir">Tempat Lahir</label>
-                                    <input type="text" name="tempatLahir" id="tempatLahir" class="form-control">
+                                    <input type="text" name="tempatLahir" id="tempatLahir" class="form-control" required>
                                     <?= form_error('tempatLahir', '<small class="text-danger pl-3 mt-3">', '</small>'); ?>
                                 </div>
                                 <div class="form-group">
                                     <label>Tanggal Lahir</label>
-                                    <input id="datepicker" name="tanggalLahir" class="form-control">
+                                    <input id="datepicker" name="tanggalLahir" class="form-control" autocomplete="off" required>
                                 </div>
                                 <div class="form-group">
                                     <label for="jenjang">Pendaftaran Untuk</label>
-                                    <select class="form-control" name="jenjang">
+                                    <select class="form-control" name="jenjang" required>
                                         <option>-- Pendaftaran Untuk --</option>
                                         <option value="ponpes">PONPES</option>
                                         <option value="mts">Madrasah Tsanawiyah</option>

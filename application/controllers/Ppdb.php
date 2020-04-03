@@ -26,7 +26,8 @@ class Ppdb extends CI_Controller {
 		$this->load->view('templates/back/footer');
 
 		$this->form_validation->set_rules('nama_lengkap','Email','required|trim');
-		$this->form_validation->set_rules('wa','Whatsapp','required|trim');
+		$this->form_validation->set_rules('wa','No Telp','required');
+		$this->form_validation->set_rules('jenjang','Jenis Pendaftaran','required');
 
 		if ($this->form_validation->run() == true) {
 			$this->M_ppdb->registrasi();
@@ -193,7 +194,6 @@ class Ppdb extends CI_Controller {
 
 			if ($this->form_validation->run() == true) {
 				$this->M_ppdb->edit();
-				fSukses('Data berhasil di update','ppdb/dashboard');
 			}
 
 			$this->load->view('templates/back/head',$data);

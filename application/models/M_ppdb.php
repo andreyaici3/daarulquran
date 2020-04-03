@@ -84,7 +84,7 @@ class M_ppdb extends CI_Model {
 			'nama_siswa' 		=> htmlspecialchars($this->input->post('nama_siswa',true)),
 			'jenis_kelamin' 	=> htmlspecialchars($this->input->post('jk',true)),
 			'tempat_lahir' 		=> htmlspecialchars($this->input->post('tempat_lahir',true)),
-			'tanggal_lahir' 	=> htmlspecialchars($this->input->post('tanggal_lahir',true)),
+			'tanggal_lahir' 	=> strtotime($this->input->post('tanggal_lahir',true)),
 			'nik'				=> htmlspecialchars($this->input->post('wa',true)),
 			'jln'				=> htmlspecialchars($this->input->post('jalan',true)),
 			'rt'				=> htmlspecialchars($this->input->post('rt',true)),
@@ -102,26 +102,26 @@ class M_ppdb extends CI_Model {
 			'telp_hp'			=> htmlspecialchars($this->input->post('telp_hp',true)),
 			'nama_ayah'			=> htmlspecialchars($this->input->post('nama_ayah',true)),
 			'tempat_lahir_ayah'	=> htmlspecialchars($this->input->post('tempat_lahir_ayah',true)),
-			'tanggal_lahir_ayah'=> htmlspecialchars($this->input->post('tanggal_lahir_ayah',true)),
-			'pendidikan_terakhir_ayah' => htmlspecialchars($this->input->post('pendidikan_terakhir_ayah',true)),
+			'tanggal_lahir_ayah'=> strtotime($this->input->post('tanggal_lahir_ayah',true)),
 			'pekerjaan_ayah'	=> htmlspecialchars($this->input->post('pekerjaan_ayah',true)),
-			'penghasilan_perbulan_ayah'	=> htmlspecialchars($this->input->post('penghasilan_perbulan_ayah',true)),
 			'hp_wa_ayah'		=> htmlspecialchars($this->input->post('hp_wa_ayah',true)),
 			'nama_ibu'			=> htmlspecialchars($this->input->post('nama_ibu',true)),
 			'tempat_lahir_ibu'	=> htmlspecialchars($this->input->post('tempat_lahir_ibu',true)),
-			'tanggal_lahir_ibu'	=> htmlspecialchars($this->input->post('tanggal_lahir_ibu',true)),
+			'tanggal_lahir_ibu'	=> strtotime($this->input->post('tanggal_lahir_ibu',true)),
 			'pekerjaan_ibu'		=> htmlspecialchars($this->input->post('pekerjaan_ibu',true)),
-			'penghasilan_perbulan_ibu'=> htmlspecialchars($this->input->post('penghasilan_perbulan_ibu',true)),
-			'pendidikan_terakhir_ibu' => htmlspecialchars($this->input->post('pendidikan_terakhir_ibu',true)),
 			'hp_wa_ibu'			=> htmlspecialchars($this->input->post('hp_wa_ibu',true)),
 			'no_whatsapp'		=> htmlspecialchars($this->input->post('wa',true)),
-			'access_edit'		=> 0
+			'access_edit'		=> 0,
+			'penghasilan_perbulan_ibu'		=> htmlspecialchars($this->input->post('penghasilan_perbulan_ibu',true)),
+			'pendidikan_terakhir_ibu' 		=> htmlspecialchars($this->input->post('pendidikan_terakhir_ibu',true)),
+			'pendidikan_terakhir_ayah'		=> htmlspecialchars($this->input->post('pendidikan_terakhir_ayah',true)),
+			'penghasilan_perbulan_ayah'		=> htmlspecialchars($this->input->post('penghasilan_perbulan_ayah',true))
 		];
-
 
 		$this->db->set($data);
 		$this->db->where('id_siswa',$id);
 		$this->db->update('master_data_siswa');
+		fSukses('Data berhasil di update','ppdb/sedit/' . urlencode(base64_encode(base64_encode($id))));
 		
 	}
 

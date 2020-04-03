@@ -1,7 +1,7 @@
 <h3 class="page-header"><?= $title2; ?></h3>
 <div class="col-lg">
     <?php formErr('username'); ?>
-    
+    <?= $this->session->flashdata('msgi'); ?>
     <div class="panel panel-primary">
         <div class="panel-heading">
             Form Edit siswa PPDB
@@ -28,12 +28,17 @@
                     <input class="form-control" name="tempat_lahir" placeholder="Tempat Lahir ... " id="tempat_lahir" type="text" value="<?= $person['tempat_lahir']; ?>">
                 </div>  
             </div>
+
+
             <div class="col-md-4">
                 <div class="form-group">
                     <label>Tanggal Lahir</label>
-                    <input class="form-control" name="tanggal_lahir" placeholder="tanggal_lahir ... " id="tanggal_lahir" type="date" value="<?= $person['tanggal_lahir']; ?>">
+                    <input class="form-control" id="datepicker" name="tanggal_lahir"  value="<?= date('m/d/Y', $person['tanggal_lahir']); ?>" autocomplete="off"">
                 </div>  
             </div>
+
+
+
             <div class="col-md-3">
                 <div class="form-group">
                     <label>No Whatsapp</label>
@@ -142,14 +147,15 @@
 
             <div class="col-md-5">
                 <div class="form-group">
-                    <label>Tanggal Lahir Ayah</label>
-                    <input type="text" name="tanggal_lahir_ayah" placeholder="Tanggal lahir Ayah...." class="form-control" value="<?= $person['tanggal_lahir_ayah']; ?>">
+                     <label>Tempat Lahir Ayah</label>
+                    <input type="text" name="tempat_lahir_ayah" placeholder="tempat lahir Ayah...." class="form-control" value="<?= $person['tempat_lahir_ayah']; ?>">
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="form-group">
-                    <label>tempat Lahir Ayah</label>
-                    <input type="text" name="tempat_lahir_ayah" placeholder="tempat lahir Ayah...." class="form-control" value="<?= $person['tempat_lahir_ayah']; ?>">
+                    <label>Tanggal Lahir Ayah</label>
+                    <input id="datepickerAyah" name="tanggal_lahir_ayah" class="form-control" value="<?php if($person['tanggal_lahir_ayah']) { echo date('d/m/y', $person['tanggal_lahir_ayah']); } ?>" autocomplete="off"  placeholder="MM/DD/YYYY">
+                   
                 </div>
             </div>
             <div class="col-md-3">
@@ -190,14 +196,14 @@
 
             <div class="col-md-5">
                 <div class="form-group">
-                    <label>Tanggal Lahir</label>
-                    <input type="text" name="tanggal_lahir_ibu" placeholder="Tanggal lahir..." class="form-control" value="<?= $person['tanggal_lahir_ibu']; ?>">
+                    <label>Tempat Lahir</label>
+                    <input type="text" name="tempat_lahir_ibu" placeholder="tempat lahir ..." class="form-control" value="<?= $person['tempat_lahir_ibu']; ?>">
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="form-group">
-                    <label>tempat Lahir</label>
-                    <input type="text" name="tempat_lahir_ibu" placeholder="tempat lahir ..." class="form-control" value="<?= $person['tempat_lahir_ibu']; ?>">
+                    <label>Tanggal Lahir Ibu</label>
+                    <input id="datepickerIbu" name="tanggal_lahir_ibu" class="form-control" value="<?php if($person['tanggal_lahir_ibu']) { echo date('d/m/y', $person['tanggal_lahir_ibu']); } ?>" autocomplete="off"  placeholder="MM/DD/YYYY">
                 </div>
             </div>
             <div class="col-md-3">
@@ -248,8 +254,8 @@
         </div>
     </div> -->
     <?php if ($person['access_edit'] == 1 ): ?>
-        <div class="col-md-12 mb3">
-                <button type="submit" class="btn btn-primary mb-3" onclick="return confirm('Apakah data sudah benar?, selama proses pengajuan anda tidak dapat mengubah data')">Save Changes</button>
+        <div class="col-md-12" style="margin-bottom: 30px;">
+                <button type="submit" class="btn btn-primary" onclick="return confirm('Apakah data sudah benar?, selama proses pengajuan anda tidak dapat mengubah data')">Save Changes</button>
                 <button type="reset" class="btn btn-danger mb-3">Reset</button>
     </div>
     <?php endif ?>

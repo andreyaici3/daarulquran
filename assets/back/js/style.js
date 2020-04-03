@@ -1,7 +1,7 @@
 $(function(){
 
 
-	const url = 'http://localhost/dq/'
+	const url = 'http://localhost/daarulquran/'
 
 	$('.addMapel').on('click', function(){
 		$('#myModalLabel').html('Add New Mapel');
