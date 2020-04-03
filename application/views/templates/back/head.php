@@ -23,6 +23,7 @@
         <script src="<?= base_url('assets/back/ckeditor/samples/'); ?>js/sample.js"></script>
         <link rel="stylesheet" href="<?= base_url('assets/back/ckeditor/samples/'); ?>toolbarconfigurator/lib/codemirror/neo.css">
         
+        <link href="https://repo.rachmat.id/jquery-ui-1.12.1/jquery-ui.css" rel="stylesheet">
 
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->

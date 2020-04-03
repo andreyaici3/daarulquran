@@ -21,6 +21,15 @@
                                     <?= form_error('wa', '<small class="text-danger pl-3 mt-3">', '</small>'); ?>
                                 </div>
                                 <div class="form-group">
+                                    <label for="tempatLahir">Tempat Lahir</label>
+                                    <input type="text" name="tempatLahir" id="tempatLahir" class="form-control">
+                                    <?= form_error('tempatLahir', '<small class="text-danger pl-3 mt-3">', '</small>'); ?>
+                                </div>
+                                <div class="form-group">
+                                    <label>Tanggal Lahir</label>
+                                    <input id="datepicker" name="tanggalLahir" class="form-control">
+                                </div>
+                                <div class="form-group">
                                     <label for="jenjang">Pendaftaran Untuk</label>
                                     <select class="form-control" name="jenjang">
                                         <option>-- Pendaftaran Untuk --</option>

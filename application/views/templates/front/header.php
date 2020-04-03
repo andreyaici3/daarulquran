@@ -1,9 +1,6 @@
 <!-- Header -->
 
 	<header class="header">
-		<div class="fixed-top mt-2">
-			<marquee><h3 style="color: red;">Seluruh Sektor Web Sedang tahap pembangunan</h3></marquee>
-		</div>
 		<!-- Top Bar -->
 		<div class="top_bar">
 			<div class="top_bar_container">
@@ -60,7 +57,9 @@
 								          <a class="dropdown-item" href="<?= base_url('home/siswa'); ?>">Siswa</a>
 								        </div>
 								    </li>
+								    <li><a href="<?= base_url('ppdb'); ?>">PPDB</a></li>
 									<li><a href="<?= base_url('home/galery'); ?>">Galeri</a></li>
+									<li><a href="<?= base_url(''); ?>">Karya</a></li>
 									<li><a href="<?= base_url('home/download'); ?>">Download</a></li>
 									<li><a href="<?= base_url('home/berita'); ?>">Berita</a></li>
 									<li><a href="<?= base_url('home/about'); ?>">About</a></li>

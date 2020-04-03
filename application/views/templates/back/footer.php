@@ -18,6 +18,17 @@
         <script src="<?= base_url('assets/back/'); ?>js/startmin.js"></script>
         <script src="<?= base_url('assets/back/'); ?>js/style.js"></script>
 
+        <!-- datepicker -->
+        <script type="text/javascript" src="https://repo.rachmat.id/jquery-1.12.4.js"></script>
+        <script type="text/javascript" src="https://repo.rachmat.id/jquery-ui-1.12.1/jquery-ui.js"></script>
+        
+
+        <script type="text/javascript">
+            $(function(){
+              $("#datepicker").datepicker();
+            });
+        </script>
+
         <!-- Page-Level Demo Scripts - Tables - Use for reference -->
         <script>
             $(document).ready(function() {

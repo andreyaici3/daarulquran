@@ -15,6 +15,8 @@ class Ppdb extends CI_Controller {
 
 	public function pendaftaran()
 	{
+
+	
 		$this->load->model('M_ppdb');
 		$data = [
 			'title' => 'Registrasi Siswa'

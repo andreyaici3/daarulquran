@@ -6,12 +6,13 @@ class M_ppdb extends CI_Model {
 	public function registrasi()
 	{
 		$nama = htmlspecialchars($this->input->post('nama_lengkap'));
-		$pecahNama = explode(' ', $nama);
-		$angka_random = rand(500, 1000);
-		$password_ori = 'DQ2020-' . uniqid();
+		$username = date('Y', time()) . rand(1500,3000) . '@daarulquran.sch.id';
+		$strTime = strtotime($this->input->post('tanggalLahir'));
+		$tempatLahir = htmlspecialchars(strtolower($this->input->post('tempatLahir',true)));
+		$password_ori = $tempatLahir . date('dmY',$strTime);
 		$password = password_hash($password_ori, PASSWORD_DEFAULT);
-		$username = $pecahNama[1] . $angka_random .'@daarulquran.com';
 
+	
 
 		$data = [
 			'nama_siswa' => $nama,
@@ -19,6 +20,10 @@ class M_ppdb extends CI_Model {
 			'jenis_pendaftaran' => $this->input->post('jenjang'),
 			'username' => strtolower($username),
 			'password' => $password,
+			'access_edit' => 1,
+			'tempat_lahir' => $tempatLahir,
+			'tanggal_lahir' => $strTime,
+			'status_siswa'=> 0,
 			'status_akun' => 1
 		];
 
