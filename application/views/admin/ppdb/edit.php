@@ -172,7 +172,7 @@
         	<div class="col-md-4">
         		<div class="form-group">
         			<label>Penghasilan Perbulan</label>
-        			<input type="text" name="penghasilan_perbulan_ayah" placeholder="Penghasilan Ayah...." class="form-control" value="<?= $siswa['penghasilan_perbulan_ayah']; ?>">
+        			<input type="number" name="penghasilan_perbulan_ayah" placeholder="Penghasilan Ayah...." class="form-control" value="<?= $siswa['penghasilan_perbulan_ayah']; ?>" required>
         		</div>
         	</div>
 
@@ -220,7 +220,7 @@
         	<div class="col-md-4">
         		<div class="form-group">
         			<label>Penghasilan Perbulan</label>
-        			<input type="text" name="penghasilan_perbulan_ibu" placeholder="Penghasilan...." class="form-control" value="<?= $siswa['penghasilan_perbulan_ibu']; ?>">
+        			<input type="number" requied name="penghasilan_perbulan_ibu" placeholder="jika tida ada, isi -." class="form-control" value="<?= $siswa['penghasilan_perbulan_ibu']; ?>" required>
         		</div>
         	</div>
 
