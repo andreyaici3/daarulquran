@@ -12,6 +12,11 @@
 	<nav class="menu_nav">
 		<ul class="menu_mm">
 			<li class="menu_mm"><a href="<?= base_url(); ?>">Home</a></li>
+			<!-- <li class="menu_mm"><a href="<?= base_url(''); ?>">Karya</a></li>  -->
+			<li class="menu_mm"><a href="<?= base_url('ppdb'); ?>">PPDB</a></li>
+			<li class="menu_mm"><a href="<?= base_url('home/guru'); ?>">Guru</a></li>
+			<li class="menu_mm"><a href="<?= base_url('home/siswa'); ?>">Siswa</a></li>
+			<li class="menu_mm"><a href="<?= base_url('home/profile'); ?>">Profile</a></li>
 			<li class="menu_mm"><a href="<?= base_url('home/berita'); ?>">Berita</a></li>
 			<li class="menu_mm"><a href="<?= base_url('home/pengumuman'); ?>">Pengumuman</a></li>
 			<li class="menu_mm"><a href="<?= base_url('home/galery'); ?>">Galery</a></li>
