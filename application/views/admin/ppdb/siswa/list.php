@@ -79,6 +79,12 @@
                     </td>
                 </tr>
             </table> 
+             <div class="form-group text-center">
+                <?php if ($person['status_siswa'] == 1): ?>
+                    <a href="<?= base_url('report/formulir/' .  urlencode(base64_encode($person['id_siswa']))) ?>" class="btn btn-md btn-primary">Cetak Formulir</a>
+                <?php endif ?>
+               
+           </div>
     </div>
 </div>
 <div class="panel panel-primary">

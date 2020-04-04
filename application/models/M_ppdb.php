@@ -85,7 +85,7 @@ class M_ppdb extends CI_Model {
 			'jenis_kelamin' 	=> htmlspecialchars($this->input->post('jk',true)),
 			'tempat_lahir' 		=> htmlspecialchars($this->input->post('tempat_lahir',true)),
 			'tanggal_lahir' 	=> strtotime($this->input->post('tanggal_lahir',true)),
-			'nik'				=> htmlspecialchars($this->input->post('wa',true)),
+			'nik'				=> htmlspecialchars($this->input->post('nik',true)),
 			'jln'				=> htmlspecialchars($this->input->post('jalan',true)),
 			'rt'				=> htmlspecialchars($this->input->post('rt',true)),
 			'rw'				=> htmlspecialchars($this->input->post('rw',true)),
@@ -106,6 +106,7 @@ class M_ppdb extends CI_Model {
 			'pekerjaan_ayah'	=> htmlspecialchars($this->input->post('pekerjaan_ayah',true)),
 			'hp_wa_ayah'		=> htmlspecialchars($this->input->post('hp_wa_ayah',true)),
 			'nama_ibu'			=> htmlspecialchars($this->input->post('nama_ibu',true)),
+			'jenis_kelamin'		=> htmlspecialchars($this->input->post('jenis_kelamin',true)),
 			'tempat_lahir_ibu'	=> htmlspecialchars($this->input->post('tempat_lahir_ibu',true)),
 			'tanggal_lahir_ibu'	=> strtotime($this->input->post('tanggal_lahir_ibu',true)),
 			'pekerjaan_ibu'		=> htmlspecialchars($this->input->post('pekerjaan_ibu',true)),
@@ -147,6 +148,7 @@ class M_ppdb extends CI_Model {
 			$this->db->set($data);
 			$this->db->where('id_siswa',$id);
 			$this->db->update('master_data_siswa');
+			fSukses('Password Berhasil Diganti', 'ppdb/changePassword/' . urlencode( base64_encode(base64_encode($id))));
 		} else {
 			redirect('ppdb/dashboard');
 		}

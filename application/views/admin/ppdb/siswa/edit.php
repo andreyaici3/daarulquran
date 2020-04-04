@@ -22,7 +22,7 @@
                     <input class="form-control" name="username" placeholder="Username ... " id="username" type="text" value="<?= $person['username']; ?>" readonly>
                 </div>
             </div>
-            <div class="col-md-5">
+            <div class="col-md-4">
                 <div class="form-group">
                     <label>Tempat Lahir</label>
                     <input class="form-control" name="tempat_lahir" placeholder="Tempat Lahir ... " id="tempat_lahir" type="text" value="<?= $person['tempat_lahir']; ?>">
@@ -30,7 +30,7 @@
             </div>
 
 
-            <div class="col-md-4">
+            <div class="col-md-2">
                 <div class="form-group">
                     <label>Tanggal Lahir</label>
                     <input class="form-control" id="datepicker" name="tanggal_lahir"  value="<?= date('m/d/Y', $person['tanggal_lahir']); ?>" autocomplete="off"">
@@ -39,17 +39,39 @@
 
 
 
-            <div class="col-md-3">
+            <div class="col-md-2">
                 <div class="form-group">
                     <label>No Whatsapp</label>
                     <input class="form-control" name="wa" placeholder="No Whatsapp ... " value="<?= $person['no_whatsapp']; ?>">
                 </div>  
             </div>
 
-            <div class="col-md-8">
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label>Jenis Kelamin</label>
+                    <select class="form-control" name="jenis_kelamin">
+                        <option>--Jenis Kelamin--</option>
+                        <option value="L" <?php if ($person['jenis_kelamin'] == "L"): ?>
+                            selected
+                        <?php endif ?>>Laki - Laki</option>
+                        <option value="P" <?php if ($person['jenis_kelamin'] == "P"): ?>
+                            selected
+                        <?php endif ?>>Perempuan</option>
+                    </select>
+                </div>  
+            </div>
+
+            <div class="col-md-5">
                 <div class="form-group">
                     <label>Alamat</label>
                     <input type="text" name="jalan" placeholder="jalan...." class="form-control" value="<?= $person['jln']; ?>" >
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label>Nik</label>
+                    <input type="text" name="nik" placeholder="NIK...." class="form-control" value="<?= $person['nik']; ?>" >
                 </div>
             </div>
 

@@ -242,7 +242,6 @@ class Ppdb extends CI_Controller {
 
 			if ($this->form_validation->run() == true) {
 				$this->M_ppdb->changePassword();
-				fSukses('Password Berhasil Diganti', 'ppdb/changePassword/' . urlencode( base64_encode(base64_encode($id))));
 			}
 
 			$this->load->view('templates/back/head',$data);
