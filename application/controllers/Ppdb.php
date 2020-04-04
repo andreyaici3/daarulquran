@@ -4,12 +4,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class Ppdb extends CI_Controller {
 	public function index()
 	{
-		// $data = [
-		// 	'berita' => beritaJoinUser(),
-		// 	'setup' => setWeb(),
-		// 	'pengumuman' => $this->db->get('tbl_pengumuman')->result_array()
-		// ];
-		// $this->load->view('templates/front/head_home',$data);
+	
 		$this->load->view('front/ppdb/menu');
 	}
 
@@ -266,6 +261,7 @@ class Ppdb extends CI_Controller {
 				'title2' => 'Upload Document',
 				'identity' => urlencode(base64_encode(base64_encode($id))),
 				'setup' => setWeb(),
+				'document' =>$this->M_ppdb->getDoc($id),
 				'person' => $this->db->get_where('master_data_siswa', ['id_siswa' => $this->session->userdata('id_user')])->row_array()
 			];
 

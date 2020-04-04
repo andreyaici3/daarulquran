@@ -12,8 +12,6 @@ class M_ppdb extends CI_Model {
 		$password_ori = $tempatLahir . date('dmY',$strTime);
 		$password = password_hash($password_ori, PASSWORD_DEFAULT);
 
-	
-
 		$data = [
 			'nama_siswa' => $nama,
 			'no_whatsapp' => htmlspecialchars($this->input->post('wa',true)),
@@ -203,6 +201,14 @@ class M_ppdb extends CI_Model {
 		$this->db->where('id_siswa',$id);
 		$this->db->delete('master_data_siswa');
 		fSukses('Data Berhasil Dihapus','ppdb/view');
+	}
+
+	public function getDoc($id)
+	{
+		$this->db->select('*');
+		$this->db->from('tbl_document');
+		$this->db->join('master_data_siswa','tbl_document.id_siswa = master_data_siswa.id_siswa','LEFT');
+		return $this->db->get()->row_array();
 	}
 
 

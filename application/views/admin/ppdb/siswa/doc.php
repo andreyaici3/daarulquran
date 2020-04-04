@@ -1,9 +1,13 @@
 <h3 class="page-header"><?= $title2; ?></h3>
 <?php 
-
-        $akta = $person['akta'];
         $id = $person['id_siswa'];
-        
+        $status_ktp = $document['status_ktp']; 
+        $status_kk = $document['status_kk']; 
+        $status_akta = $document['status_akta']; 
+        $status_skhun = $document['status_skhun']; 
+        $status_ijasah = $document['status_ijasah']; 
+        $status_foto = $document['status_foto']; 
+
 
      ?>
 <div class="col-lg">
@@ -16,19 +20,107 @@
             Upload Document
         </div>
         <div class="panel-body">
-            <?= form_open_multipart('ppdb/document'); ?>
-            <div class="form-group">
-                <?php if (!$person['akta']): ?>
-                    <label>Persyaratan</label>
-                    <input type="hidden" name="ident" value="<?= $id; ?>">
-                    <input type="file" name="akta" class="form-control"><br>
-                    <button type="submit" class="btn btn-primary" onclick="return confirm('apakah file sudah benar.?')">Upload</button>
-                <?php else: ?>
-                    <a href="<?= base_url('assets/ppdb/' . $person['akta']); ?>">Download Document Anda</a>
-                <?php endif ?>
-            </div>
+           <table class="table table-bordered table-hover">
+               <thead>
+                   <th>Nama Dokumen</th>
+                   <th>Upload</th>
+                   <th>Status</th>
+               </thead>
+               <tbody>
 
-            
+                   <tr>
+                       <td>Ktp</td>
+                       <td class="text-center"><a href="<?= base_url('upload/ktp/' . urlencode(base64_encode(base64_encode($id)))); ?>" class="btn btn-primary">Upload</a></td>
+                       <td class="text-center">
+                           <?php if ($status_ktp == 2): ?>
+                               Verifying
+                           <?php endif ?>
+                           <?php if ($status_ktp == 1): ?>
+                               Accept
+                           <?php endif ?>
+                           <?php if ($status_ktp == 0): ?>
+                               Not Upload
+                           <?php endif ?>
+                       </td>
+                   </tr>
+                   <tr>
+                       <td>Pas Foto</td>
+                       <td class="text-center"><a href="<?= base_url('upload/foto/' . urlencode(base64_encode(base64_encode($id)))); ?>" class="btn btn-primary">Upload</a></td>
+                       <td class="text-center">
+                           <?php if ($status_foto == 2): ?>
+                               Verifying
+                           <?php endif ?>
+                           <?php if ($status_foto == 1): ?>
+                               Accept
+                           <?php endif ?>
+                           <?php if ($status_foto == 0): ?>
+                               Not Upload
+                           <?php endif ?>
+                       </td>
+                   </tr>
+                   <tr>
+                       <td>Kartu Keluarga</td>
+                       <td class="text-center"><a href="<?= base_url('upload/kk/' . urlencode(base64_encode(base64_encode($id)))); ?>" class="btn btn-primary">Upload</a></td>
+                       <td class="text-center">
+                           <?php if ($status_kk == 2): ?>
+                               Verifying
+                           <?php endif ?>
+                           <?php if ($status_kk == 1): ?>
+                               Accept
+                           <?php endif ?>
+                           <?php if ($status_kk == 0): ?>
+                               Not Upload
+                           <?php endif ?>
+                       </td>
+                   </tr>
+                   <tr>
+                       <td>Ijasah</td>
+                       <td class="text-center"><a href="<?= base_url('upload/ijasah/' . urlencode(base64_encode(base64_encode($id)))); ?>" class="btn btn-primary">Upload</a></td>
+                       <td class="text-center">
+                           <?php if ($status_ijasah == 2): ?>
+                               Verifying
+                           <?php endif ?>
+                           <?php if ($status_ijasah == 1): ?>
+                               Accept
+                           <?php endif ?>
+                           <?php if ($status_ijasah == 0): ?>
+                               Not Upload
+                           <?php endif ?>
+                       </td>
+                   </tr>
+                   <tr>
+                       <td>Skhun</td>
+                       <td class="text-center"><a href="<?= base_url('upload/skhun/' . urlencode(base64_encode(base64_encode($id)))); ?>" class="btn btn-primary">Upload</a></td>
+                       <td class="text-center">
+                           <?php if ($status_skhun == 2): ?>
+                               Verifying
+                           <?php endif ?>
+                           <?php if ($status_skhun == 1): ?>
+                               Accept
+                           <?php endif ?>
+                           <?php if ($status_skhun == 0): ?>
+                               Not Upload
+                           <?php endif ?>
+                       </td>
+                   </tr>
+                   <tr>
+                       <td>Akta Kelahiran</td>
+                       <td class="text-center"><a href="<?= base_url('upload/akta/' . urlencode(base64_encode(base64_encode($id)))); ?>" class="btn btn-primary">Upload</a></td>
+                       <td class="text-center">
+                           <?php if ($status_akta == 2): ?>
+                               Verifying
+                           <?php endif ?>
+                           <?php if ($status_akta == 1): ?>
+                               Accept
+                           <?php endif ?>
+                           <?php if ($status_akta == 0): ?>
+                               Not Upload
+                           <?php endif ?>
+                       </td>
+                   </tr>
+                   
+               </tbody>
+           </table>             
         </div>
     </div>
     
@@ -36,5 +128,5 @@
 
 
     
-    <?= form_close(); ?> 
+    
 </div>

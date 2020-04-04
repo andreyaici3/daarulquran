@@ -82,4 +82,183 @@ class Upload extends CI_Controller {
 			redirect('dashboard');
 		}
 	}
+
+	public function ktp()
+	{
+		if ($this->session->userdata('token') && $this->session->userdata('sesi') == 9999) {
+			$data = [
+				'setup' => setWeb(),
+				'title' => 'dashboard',
+				'title2' => 'Upload KTP',
+				'document' => $this->db->get_where('tbl_document', ['id_siswa' => $this->session->userdata('id_siswa')])->row_array(),
+				'person' => $this->db->get_where('master_data_siswa', ['id_siswa' => $this->session->userdata('id_user')])->row_array()];
+
+			$this->load->view('templates/back/head',$data);
+			$this->load->view('admin/layout/toplink');
+			$this->load->view('admin/layout/sidebarPpdb');
+			$this->load->view('admin/ppdb/siswa/ktp');
+			$this->load->view('admin/layout/footer');
+			$this->load->view('templates/back/footer');
+		} else {
+			fGagal('Silahkan Login Terlebih Dahulu','ppdb/login');
+		}
+	}
+
+	public function kk()
+	{
+		if ($this->session->userdata('token') && $this->session->userdata('sesi') == 9999) {
+			$data = [
+				'setup' => setWeb(),
+				'title' => 'dashboard',
+				'title2' => 'Upload Kartu Keluarga',
+				'document' => $this->db->get_where('tbl_document', ['id_siswa' => $this->session->userdata('id_siswa')])->row_array(),
+				'person' => $this->db->get_where('master_data_siswa', ['id_siswa' => $this->session->userdata('id_user')])->row_array()];
+
+			$this->load->view('templates/back/head',$data);
+			$this->load->view('admin/layout/toplink');
+			$this->load->view('admin/layout/sidebarPpdb');
+			$this->load->view('admin/ppdb/siswa/kk');
+			$this->load->view('admin/layout/footer');
+			$this->load->view('templates/back/footer');
+		} else {
+			fGagal('Silahkan Login Terlebih Dahulu','ppdb/login');
+		}
+	}
+
+	public function ijasah()
+	{
+		if ($this->session->userdata('token') && $this->session->userdata('sesi') == 9999) {
+			$data = [
+				'setup' => setWeb(),
+				'title' => 'dashboard',
+				'title2' => 'Upload Ijasah',
+				'document' => $this->db->get_where('tbl_document', ['id_siswa' => $this->session->userdata('id_siswa')])->row_array(),
+				'person' => $this->db->get_where('master_data_siswa', ['id_siswa' => $this->session->userdata('id_user')])->row_array()];
+
+			$this->load->view('templates/back/head',$data);
+			$this->load->view('admin/layout/toplink');
+			$this->load->view('admin/layout/sidebarPpdb');
+			$this->load->view('admin/ppdb/siswa/ijasah');
+			$this->load->view('admin/layout/footer');
+			$this->load->view('templates/back/footer');
+		} else {
+			fGagal('Silahkan Login Terlebih Dahulu','ppdb/login');
+		}
+	}
+
+	public function skhun()
+	{
+		if ($this->session->userdata('token') && $this->session->userdata('sesi') == 9999) {
+			$data = [
+				'setup' => setWeb(),
+				'title' => 'dashboard',
+				'title2' => 'Upload SKHUN',
+				'document' => $this->db->get_where('tbl_document', ['id_siswa' => $this->session->userdata('id_siswa')])->row_array(),
+				'person' => $this->db->get_where('master_data_siswa', ['id_siswa' => $this->session->userdata('id_user')])->row_array()];
+
+			$this->load->view('templates/back/head',$data);
+			$this->load->view('admin/layout/toplink');
+			$this->load->view('admin/layout/sidebarPpdb');
+			$this->load->view('admin/ppdb/siswa/skhun');
+			$this->load->view('admin/layout/footer');
+			$this->load->view('templates/back/footer');
+		} else {
+			fGagal('Silahkan Login Terlebih Dahulu','ppdb/login');
+		}
+	}
+
+	public function akta()
+	{
+		if ($this->session->userdata('token') && $this->session->userdata('sesi') == 9999) {
+			$data = [
+				'setup' => setWeb(),
+				'title' => 'dashboard',
+				'title2' => 'Upload akta Kelahiran',
+				'document' => $this->db->get_where('tbl_document', ['id_siswa' => $this->session->userdata('id_siswa')])->row_array(),
+				'person' => $this->db->get_where('master_data_siswa', ['id_siswa' => $this->session->userdata('id_user')])->row_array()];
+
+			$this->load->view('templates/back/head',$data);
+			$this->load->view('admin/layout/toplink');
+			$this->load->view('admin/layout/sidebarPpdb');
+			$this->load->view('admin/ppdb/siswa/akta');
+			$this->load->view('admin/layout/footer');
+			$this->load->view('templates/back/footer');
+		} else {
+			fGagal('Silahkan Login Terlebih Dahulu','ppdb/login');
+		}
+	}
+
+	public function foto()
+	{
+		if ($this->session->userdata('token') && $this->session->userdata('sesi') == 9999) {
+			$data = [
+				'setup' => setWeb(),
+				'title' => 'dashboard',
+				'title2' => 'Upload Pas Foto',
+				'document' => $this->db->get_where('tbl_document', ['id_siswa' => $this->session->userdata('id_siswa')])->row_array(),
+				'person' => $this->db->get_where('master_data_siswa', ['id_siswa' => $this->session->userdata('id_user')])->row_array()];
+
+			$this->load->view('templates/back/head',$data);
+			$this->load->view('admin/layout/toplink');
+			$this->load->view('admin/layout/sidebarPpdb');
+			$this->load->view('admin/ppdb/siswa/foto');
+			$this->load->view('admin/layout/footer');
+			$this->load->view('templates/back/footer');
+		} else {
+			fGagal('Silahkan Login Terlebih Dahulu','ppdb/login');
+		}
+	}
+
+	public function document($type)
+	{
+		if ($type == "ktp") {
+			if ($this->session->userdata('token') && $this->session->userdata('sesi') == 9999) {
+				$this->M_upload->ktp();
+			} else {
+				fGagal('Silahkan Login Terlebih Dahulu','ppdb/login');
+			}
+		}
+
+		if ($type == "kk") {
+			if ($this->session->userdata('token') && $this->session->userdata('sesi') == 9999) {
+				$this->M_upload->kk();
+			} else {
+				fGagal('Silahkan Login Terlebih Dahulu','ppdb/login');
+			}
+		}
+
+		if ($type == "ijasah") {
+			if ($this->session->userdata('token') && $this->session->userdata('sesi') == 9999) {
+				$this->M_upload->ijasah();
+			} else {
+				fGagal('Silahkan Login Terlebih Dahulu','ppdb/login');
+			}
+		}
+
+		if ($type == "skhun") {
+			if ($this->session->userdata('token') && $this->session->userdata('sesi') == 9999) {
+				$this->M_upload->skhun();
+			} else {
+				fGagal('Silahkan Login Terlebih Dahulu','ppdb/login');
+			}
+		}
+
+		if ($type == "akta") {
+			if ($this->session->userdata('token') && $this->session->userdata('sesi') == 9999) {
+				$this->M_upload->akta();
+			} else {
+				fGagal('Silahkan Login Terlebih Dahulu','ppdb/login');
+			}
+		}
+
+		if ($type == "foto") {
+			if ($this->session->userdata('token') && $this->session->userdata('sesi') == 9999) {
+				$this->M_upload->foto();
+			} else {
+				fGagal('Silahkan Login Terlebih Dahulu','ppdb/login');
+			}
+		}
+
+
+	}
 }

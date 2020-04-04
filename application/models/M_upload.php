@@ -205,4 +205,296 @@ class M_upload extends CI_Model {
 		fSukses('Data Berhasil di ubah!!','setting/headerC');
 	}	
 
+
+	public function ktp()
+	{
+		$id = $this->input->post('ident');
+			$query =  $this->db->get_where('tbl_document', ['id_siswa' => $id])->row_array();
+
+			if (!$query) {
+				$data = [
+					'id_siswa' => $id,
+					'status_kk' => 0,
+					'status_akta' => 0,
+					'status_foto' => 0,
+					'status_skhun' => 0,
+					'status_ijasah' => 0
+				];
+				$this->db->insert('tbl_document',$data);
+			}
+
+			$config = [
+				'upload_path' => './assets/file/siswa/',
+				'allowed_types' => 'pdf',
+				'file_name' => 'KTP-' . uniqid() . '.pdf',
+				'max_size' => '102048'
+			];
+
+			$this->load->library('upload',$config);
+			$this->upload->initialize($config);
+			if ($this->upload->do_upload('ktp')) {
+				$nama = $config['file_name'];
+			} else {
+				fGagal('Ktp Gagal Di upload','ppdb/dashboard');
+			}
+
+			if (file_exists(FCPATH . 'assets/file/siswa/' . $query['ktp'])) {
+				unlink(FCPATH . 'assets/file/siswa/' . $query['ktp']);
+			} 
+
+
+			$data = [
+				'ktp' => $nama,
+				'status_ktp' => 2				
+			];
+
+			$this->db->set($data);
+			$this->db->where('id_siswa',$id);
+			$this->db->update('tbl_document');
+			fSukses('Ktp Berhasil Di upload','ppdb/dashboard');
+	}
+
+	public function kk()
+	{
+		$id = $this->input->post('ident');
+			$query =  $this->db->get_where('tbl_document', ['id_siswa' => $id])->row_array();
+
+			if (!$query) {
+				$data = [
+					'id_siswa' => $id,
+					'status_kk' => 0,
+					'status_akta' => 0,
+					'status_foto' => 0,
+					'status_skhun' => 0,
+					'status_ijasah' => 0
+				];
+				$this->db->insert('tbl_document',$data);
+			}
+
+			$config = [
+				'upload_path' => './assets/file/siswa/',
+				'allowed_types' => 'pdf',
+				'file_name' => 'KK-' . uniqid() . '.pdf',
+				'max_size' => '102048'
+			];
+
+			$this->load->library('upload',$config);
+			$this->upload->initialize($config);
+			if ($this->upload->do_upload('kk')) {
+				$nama = $config['file_name'];
+			} else {
+				fGagal('kartu keluarga Gagal Di upload','ppdb/dashboard');
+			}
+
+			if (file_exists(FCPATH . 'assets/file/siswa/' . $query['kk'])) {
+				unlink(FCPATH . 'assets/file/siswa/' . $query['kk']);
+			} 
+
+
+			$data = [
+				'kk' => $nama,
+				'status_kk' => 2				
+			];
+
+			$this->db->set($data);
+			$this->db->where('id_siswa',$id);
+			$this->db->update('tbl_document');
+			fSukses('Kartu Keluarga Berhasil Di upload','ppdb/dashboard');
+	}
+
+	public function ijasah()
+	{
+		$id = $this->input->post('ident');
+			$query =  $this->db->get_where('tbl_document', ['id_siswa' => $id])->row_array();
+
+			if (!$query) {
+				$data = [
+					'id_siswa' => $id,
+					'status_kk' => 0,
+					'status_akta' => 0,
+					'status_foto' => 0,
+					'status_skhun' => 0,
+					'status_ijasah' => 0
+				];
+				$this->db->insert('tbl_document',$data);
+			}
+
+			$config = [
+				'upload_path' => './assets/file/siswa/',
+				'allowed_types' => 'pdf',
+				'file_name' => 'IJASAH-' . uniqid() . '.pdf',
+				'max_size' => '102048'
+			];
+
+			$this->load->library('upload',$config);
+			$this->upload->initialize($config);
+			if ($this->upload->do_upload('ijasah')) {
+				$nama = $config['file_name'];
+			} else {
+				fGagal('Ijasah Gagal Di upload','ppdb/dashboard');
+			}
+
+			if (file_exists(FCPATH . 'assets/file/siswa/' . $query['ijasah'])) {
+				unlink(FCPATH . 'assets/file/siswa/' . $query['ijasah']);
+			} 
+
+
+			$data = [
+				'ijasah' => $nama,
+				'status_ijasah' => 2				
+			];
+
+			$this->db->set($data);
+			$this->db->where('id_siswa',$id);
+			$this->db->update('tbl_document');
+			fSukses('Ijasah Berhasil Di upload','ppdb/dashboard');
+	}
+
+	public function skhun()
+	{
+		$id = $this->input->post('ident');
+			$query =  $this->db->get_where('tbl_document', ['id_siswa' => $id])->row_array();
+
+			if (!$query) {
+				$data = [
+					'id_siswa' => $id,
+					'status_kk' => 0,
+					'status_akta' => 0,
+					'status_foto' => 0,
+					'status_skhun' => 0,
+					'status_ijasah' => 0
+				];
+				$this->db->insert('tbl_document',$data);
+			}
+
+			$config = [
+				'upload_path' => './assets/file/siswa/',
+				'allowed_types' => 'pdf',
+				'file_name' => 'SKHUN-' . uniqid() . '.pdf',
+				'max_size' => '102048'
+			];
+
+			$this->load->library('upload',$config);
+			$this->upload->initialize($config);
+			if ($this->upload->do_upload('skhun')) {
+				$nama = $config['file_name'];
+			} else {
+				fGagal('SKHUN Gagal Di upload','ppdb/dashboard');
+			}
+
+			if (file_exists(FCPATH . 'assets/file/siswa/' . $query['skhun'])) {
+				unlink(FCPATH . 'assets/file/siswa/' . $query['skhun']);
+			} 
+
+
+			$data = [
+				'skhun' => $nama,
+				'status_skhun' => 2				
+			];
+
+			$this->db->set($data);
+			$this->db->where('id_siswa',$id);
+			$this->db->update('tbl_document');
+			fSukses('SKHUN Berhasil Di upload','ppdb/dashboard');
+	}
+
+	public function akta()
+	{
+		$id = $this->input->post('ident');
+			$query =  $this->db->get_where('tbl_document', ['id_siswa' => $id])->row_array();
+
+			if (!$query) {
+				$data = [
+					'id_siswa' => $id,
+					'status_kk' => 0,
+					'status_akta' => 0,
+					'status_foto' => 0,
+					'status_skhun' => 0,
+					'status_ijasah' => 0
+				];
+				$this->db->insert('tbl_document',$data);
+			}
+
+			$config = [
+				'upload_path' => './assets/file/siswa/',
+				'allowed_types' => 'pdf',
+				'file_name' => 'AKTA-' . uniqid() . '.pdf',
+				'max_size' => '102048'
+			];
+
+			$this->load->library('upload',$config);
+			$this->upload->initialize($config);
+			if ($this->upload->do_upload('akta')) {
+				$nama = $config['file_name'];
+			} else {
+				fGagal('Akta Kelahiran Gagal Di upload','ppdb/dashboard');
+			}
+
+			if (file_exists(FCPATH . 'assets/file/siswa/' . $query['akta'])) {
+				unlink(FCPATH . 'assets/file/siswa/' . $query['akta']);
+			} 
+
+
+			$data = [
+				'akta' => $nama,
+				'status_akta' => 2				
+			];
+
+			$this->db->set($data);
+			$this->db->where('id_siswa',$id);
+			$this->db->update('tbl_document');
+			fSukses('Akta Kelahiran Berhasil Di upload','ppdb/dashboard');
+	}
+
+	public function foto()
+	{
+		$id = $this->input->post('ident');
+			$query =  $this->db->get_where('tbl_document', ['id_siswa' => $id])->row_array();
+
+			if (!$query) {
+				$data = [
+					'id_siswa' => $id,
+					'status_kk' => 0,
+					'status_akta' => 0,
+					'status_foto' => 0,
+					'status_skhun' => 0,
+					'status_ijasah' => 0
+				];
+				$this->db->insert('tbl_document',$data);
+			}
+
+			$config = [
+				'upload_path' => './assets/file/siswa/',
+				'allowed_types' => 'jpg|jpeg|png|bmp',
+				'file_name' => 'FOTO-' . uniqid() . '.pdf',
+				'max_size' => '102048'
+			];
+
+			$this->load->library('upload',$config);
+			$this->upload->initialize($config);
+			if ($this->upload->do_upload('foto')) {
+				$nama = $config['file_name'];
+			} else {
+				fGagal('Foto Gagal Di upload','ppdb/dashboard');
+			}
+
+			if (file_exists(FCPATH . 'assets/file/siswa/' . $query['foto'])) {
+				unlink(FCPATH . 'assets/file/siswa/' . $query['foto']);
+			} 
+
+
+			$data = [
+				'foto' => $nama,
+				'status_foto' => 2				
+			];
+
+			$this->db->set($data);
+			$this->db->where('id_siswa',$id);
+			$this->db->update('tbl_document');
+			fSukses('Foto Berhasil Di upload','ppdb/dashboard');
+	}
+
+
+
+
 }
