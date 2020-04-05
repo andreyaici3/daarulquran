@@ -33,7 +33,7 @@ class Report extends CI_Controller {
     		$logo = base_url('assets/images/report/ma.jpg');
     	}
 
-    	if ($siswa['penghasilan_perbulan_ibu'] != "-") {
+    	if ($siswa['penghasilan_perbulan_ibu'] != 0) {
     		$ppi = $this->rupiah($siswa['penghasilan_perbulan_ibu']);
     	} else {
     		$ppi = "Tidak Berpenghasilan";

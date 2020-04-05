@@ -124,6 +124,54 @@ class M_ppdb extends CI_Model {
 		
 	}
 
+	public function editA()
+	{
+		$id = $this->input->post('ident');
+		$data = [
+			'nama_siswa' 		=> htmlspecialchars($this->input->post('nama_siswa',true)),
+			'jenis_kelamin' 	=> htmlspecialchars($this->input->post('jk',true)),
+			'tempat_lahir' 		=> htmlspecialchars($this->input->post('tempat_lahir',true)),
+			'tanggal_lahir' 	=> strtotime($this->input->post('tanggal_lahir',true)),
+			'nik'				=> htmlspecialchars($this->input->post('nik',true)),
+			'jln'				=> htmlspecialchars($this->input->post('jalan',true)),
+			'rt'				=> htmlspecialchars($this->input->post('rt',true)),
+			'rw'				=> htmlspecialchars($this->input->post('rw',true)),
+			'dusun'				=> htmlspecialchars($this->input->post('dusun',true)),
+			'desa'				=> htmlspecialchars($this->input->post('desa',true)),
+			'kec'				=> htmlspecialchars($this->input->post('kec',true)),
+			'kota'				=> htmlspecialchars($this->input->post('kab',true)),
+			'prov'				=> htmlspecialchars($this->input->post('prov',true)),
+			'email'				=> htmlspecialchars($this->input->post('email',true)),
+			'asal_sekolah'		=> htmlspecialchars($this->input->post('asal_sekolah',true)),
+			'alamat_sekolah'	=> htmlspecialchars($this->input->post('alamat_sekolah',true)),
+			'email_sekolah'		=> htmlspecialchars($this->input->post('email_sekolah',true)),
+			'nama_guru_bp_bk'	=> htmlspecialchars($this->input->post('guru_bp',true)),
+			'telp_hp'			=> htmlspecialchars($this->input->post('telp_hp',true)),
+			'nama_ayah'			=> htmlspecialchars($this->input->post('nama_ayah',true)),
+			'tempat_lahir_ayah'	=> htmlspecialchars($this->input->post('tempat_lahir_ayah',true)),
+			'tanggal_lahir_ayah'=> strtotime($this->input->post('tanggal_lahir_ayah',true)),
+			'pekerjaan_ayah'	=> htmlspecialchars($this->input->post('pekerjaan_ayah',true)),
+			'hp_wa_ayah'		=> htmlspecialchars($this->input->post('hp_wa_ayah',true)),
+			'nama_ibu'			=> htmlspecialchars($this->input->post('nama_ibu',true)),
+			'jenis_kelamin'		=> htmlspecialchars($this->input->post('jenis_kelamin',true)),
+			'tempat_lahir_ibu'	=> htmlspecialchars($this->input->post('tempat_lahir_ibu',true)),
+			'tanggal_lahir_ibu'	=> strtotime($this->input->post('tanggal_lahir_ibu',true)),
+			'pekerjaan_ibu'		=> htmlspecialchars($this->input->post('pekerjaan_ibu',true)),
+			'hp_wa_ibu'			=> htmlspecialchars($this->input->post('hp_wa_ibu',true)),
+			'no_whatsapp'		=> htmlspecialchars($this->input->post('wa',true)),
+			'penghasilan_perbulan_ibu'		=> htmlspecialchars($this->input->post('penghasilan_perbulan_ibu',true)),
+			'pendidikan_terakhir_ibu' 		=> htmlspecialchars($this->input->post('pendidikan_terakhir_ibu',true)),
+			'pendidikan_terakhir_ayah'		=> htmlspecialchars($this->input->post('pendidikan_terakhir_ayah',true)),
+			'penghasilan_perbulan_ayah'		=> htmlspecialchars($this->input->post('penghasilan_perbulan_ayah',true))
+		];
+
+		$this->db->set($data);
+		$this->db->where('id_siswa',$id);
+		$this->db->update('master_data_siswa');
+		fSukses('Data berhasil di update','ppdb/edit/' . urlencode(base64_encode(base64_encode($id))));
+		
+	}
+
 	public function logout()
 	{
 		$data = [
@@ -198,17 +246,111 @@ class M_ppdb extends CI_Model {
 	public function delete()
 	{
 		$id = $this->input->post('id');
+		
+
+		$file = $this->db->get_where('tbl_document',['id_siswa' => $id])->row_array();
+		$path = FCPATH . 'assets/file/siswa/';
+		// FCPATH . 'assets/file/siswa/' . $result[$type]
+		
+
+		if ($file['ktp'] != '') {
+			if (file_exists($path . $file['ktp'])) {
+				unlink($path . $file['ktp']);
+			}
+		}
+
+		if ($file['akta'] != '') {
+			if (file_exists($path . $file['akta'])) {
+				unlink($path . $file['akta']);
+			}
+		}
+
+		if ($file['foto'] != '') {
+			if (file_exists($path . $file['foto'])) {
+				unlink($path . $file['foto']);
+			}
+		}
+
+		if ($file['ijasah'] != '') {
+			if (file_exists($path . $file['ijasah'])) {
+				unlink($path . $file['ijasah']);
+			}
+		}
+
+		if ($file['skhun'] != '') {
+			if (file_exists($path . $file['skhun'])) {
+				unlink($path . $file['skhun']);
+			}
+		}
+
+		if ($file['kk'] != '') {
+			if (file_exists($path . $file['kk'])) {
+				unlink($path . $file['kk']);
+			}
+		}
+		
+	
 		$this->db->where('id_siswa',$id);
 		$this->db->delete('master_data_siswa');
+		$this->db->where('id_siswa', $id);
+		$this->db->delete('tbl_document');
+
 		fSukses('Data Berhasil Dihapus','ppdb/view');
+
+		
 	}
 
 	public function getDoc($id)
 	{
 		$this->db->select('*');
 		$this->db->from('tbl_document');
-		$this->db->join('master_data_siswa','tbl_document.id_siswa = master_data_siswa.id_siswa','LEFT');
+		$this->db->join('master_data_siswa','tbl_document.id_siswa = master_data_siswa.id_siswa');
+		$this->db->where('tbl_document.id_siswa',$id);
 		return $this->db->get()->row_array();
+	}
+
+	public function getDocs()
+	{
+		
+		$this->db->select('*');
+		$this->db->from('tbl_document');
+		$this->db->join('master_data_siswa', 'tbl_document.id_siswa = master_data_siswa.id_siswa');
+
+		return $this->db->get()->result_array();
+	}
+
+	public function approve($type, $file)
+	{
+		$result = $this->db->get_where('tbl_document',[$type => $file])->row_array();
+		$data = ['status_' . $type => 1];
+		$this->db->set($data);
+		$this->db->where($type, $file);
+		$this->db->update('tbl_document');
+		fSukses($type . ' Berhasil di approve','ppdb/documents');
+	}
+
+	public function reject($type, $file)
+	{
+		$result = $this->db->get_where('tbl_document',[$type => $file])->row_array();
+		$data = ['status_' . $type => 3];
+		$this->db->set($data);
+		$this->db->where($type, $file);
+		$this->db->update('tbl_document');
+		fSukses($type . ' Berhasil di reject','ppdb/documents');
+	}
+
+	public function remove($type, $file)
+	{
+		$result = $this->db->get_where('tbl_document',[$type => $file])->row_array();
+		$data = [
+			'status_' . $type => 0,
+			$type => ''
+		];
+		unlink(FCPATH . 'assets/file/siswa/' . $result[$type]);
+		$this->db->set($data);
+		$this->db->where($type, $file);
+		$this->db->update('tbl_document');
+		fSukses($type . ' Berhasil di hapus','ppdb/documents');
 	}
 
 

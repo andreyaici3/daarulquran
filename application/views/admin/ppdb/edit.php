@@ -16,54 +16,86 @@
 		    	<div class="form-group">
 	                <label>Nama Lengkap</label>
                     <input type="hidden" name="ident" value="<?= $siswa['id_siswa']; ?>">
-	                <input class="form-control" name="nama_siswa" placeholder="Nama Lengkap ... " id="nama_siswa" type="text" value="<?= $siswa['nama_siswa']; ?>" readonly>
+	                <input class="form-control" name="nama_siswa" id="nama_siswa" type="text" value="<?= $siswa['nama_siswa']; ?>" readonly>
 	            </div>
         	</div>
         	<div class="col-md-12">
 		    	<div class="form-group">
 	                <label>Username</label>
-	                <input class="form-control" name="username" placeholder="Username ... " id="username" type="text" value="<?= $siswa['username']; ?>" readonly>
+	                <input class="form-control" name="username" type="text" value="<?= $siswa['username']; ?>" readonly>
 	            </div>
         	</div>
-        	<div class="col-md-5">
-		    	<div class="form-group">
-	                <label>Tempat Lahir</label>
-	                <input class="form-control" name="tempat_lahir" placeholder="Tempat Lahir ... " id="tempat_lahir" type="text" value="<?= $siswa['tempat_lahir']; ?>">
-	            </div>	
-        	</div>
-        	<div class="col-md-4">
-		    	<div class="form-group">
-	                <label>Tanggal Lahir</label>
-	                <input class="form-control" name="tanggal_lahir" placeholder="tanggal_lahir ... " id="tanggal_lahir" type="date" value="<?= $siswa['tanggal_lahir']; ?>">
-	            </div>	
-        	</div>
-        	<div class="col-md-3">
-		    	<div class="form-group">
-	                <label>No Whatsapp</label>
-	                <input class="form-control" name="wa" placeholder="No Whatsapp ... " value="<?= $siswa['no_whatsapp']; ?>">
-	            </div>	
-        	</div>
+             <div class="col-md-4">
+                <div class="form-group">
+                   <div class="form-group">
+                    <label>Tempat Lahir</label>
+                    <input class="form-control" name="tempat_lahir" placeholder="Tempat Lahir ... " id="tempat_lahir" type="text" value="<?= $siswa['tempat_lahir']; ?>">
+                </div>  
+                </div>  
+            </div>
 
-        	<div class="col-md-8">
-        		<div class="form-group">
-        			<label>Alamat</label>
-        			<input type="text" name="jalan" placeholder="jalan...." class="form-control" value="<?= $siswa['jln']; ?>" >
-        		</div>
-        	</div>
 
-        	<div class="col-md-2">
-        		<div class="form-group">
-        			<label>RT</label>
-        			<input type="text" name="rt" placeholder="RT....." class="form-control" value="<?= $siswa['rt']; ?>">
-        		</div>
-        	</div>
+            <div class="col-md-2">
+                <div class="form-group">
+                    <label>Tanggal Lahir</label>
+                    <input class="form-control" id="datepicker" name="tanggal_lahir"  value="<?= date('m/d/Y', $siswa['tanggal_lahir']); ?>" autocomplete="off"">
+                </div>  
+            </div>
 
-        	<div class="col-md-2">
-        		<div class="form-group">
-        			<label>RW</label>
-        			<input type="text" name="rw" placeholder="RW....." class="form-control" value="<?= $siswa['rw']; ?>">
-        		</div>
-        	</div>
+
+
+            <div class="col-md-2">
+                <div class="form-group">
+                    <label>No Whatsapp</label>
+                    <input class="form-control" name="wa" placeholder="No Whatsapp ... " type="number" value="<?= $siswa['no_whatsapp']; ?>">
+                </div>  
+            </div>
+
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label>Jenis Kelamin</label>
+                    <select class="form-control" name="jenis_kelamin">
+                        <option>--Jenis Kelamin--</option>
+                        <option value="L" <?php if ($siswa['jenis_kelamin'] == "L"): ?>
+                            selected
+                        <?php endif ?>>Laki - Laki</option>
+                        <option value="P" <?php if ($siswa['jenis_kelamin'] == "P"): ?>
+                            selected
+                        <?php endif ?>>Perempuan</option>
+                    </select>
+                </div>  
+            </div>
+        
+            
+            <div class="col-md-5">
+                <div class="form-group">
+                    <label>Alamat</label>
+                    <input type="text" name="jalan" placeholder="jalan...." class="form-control" value="<?= $siswa['jln']; ?>" >
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label>Nik</label>
+                    <input type="text" name="nik" placeholder="NIK...." class="form-control" value="<?= $siswa['nik']; ?>" >
+                </div>
+            </div>
+
+            <div class="col-md-2">
+                <div class="form-group">
+                    <label>RT</label>
+                    <input type="text" name="rt" placeholder="RT....." class="form-control" value="<?= $siswa['rt']; ?>">
+                </div>
+            </div>
+
+            <div class="col-md-2">
+                <div class="form-group">
+                    <label>RW</label>
+                    <input type="text" name="rw" placeholder="RW....." class="form-control" value="<?= $siswa['rw']; ?>">
+                </div>
+            </div>
+        	
+
         	<div class="col-md-6">
         		<div class="form-group">
         			<label>Dusun</label>
@@ -118,7 +150,7 @@
         	<div class="col-md-12">
         		<div class="form-group">
         			<label>Email Sekolah</label>
-        			<input type="text" name="email_sekolah" placeholder="email Sekolah" class="form-control" value="<?= $siswa['email_sekolah']; ?>">
+        			<input type="email" name="email_sekolah" placeholder="email Sekolah" class="form-control" value="<?= $siswa['email_sekolah']; ?>">
         		</div>
         	</div>
         	
@@ -145,14 +177,16 @@
 
         	<div class="col-md-5">
         		<div class="form-group">
-        			<label>Tanggal Lahir Ayah</label>
-        			<input type="text" name="tanggal_lahir_ayah" placeholder="Tanggal lahir Ayah...." class="form-control" value="<?= $siswa['tanggal_lahir_ayah']; ?>">
+                    <label>Tempat Lahir Ayah</label>
+                    <input type="text" name="tempat_lahir_ayah" placeholder="tempat lahir Ayah...." class="form-control" value="<?= $siswa['tempat_lahir_ayah']; ?>">
         		</div>
         	</div>
         	<div class="col-md-4">
         		<div class="form-group">
-        			<label>tempat Lahir Ayah</label>
-        			<input type="text" name="tempat_lahir_ayah" placeholder="tempat lahir Ayah...." class="form-control" value="<?= $siswa['tempat_lahir_ayah']; ?>">
+        			
+                    <label>Tanggal Lahir Ayah</label>
+                    <input class="form-control" id="datepicker" name="tanggal_lahir_ayah"  value="<?= date('m/d/Y', $siswa['tanggal_lahir_ayah']); ?>" autocomplete="off"">
+        			
         		</div>
         	</div>
         	<div class="col-md-3">
@@ -179,7 +213,7 @@
         	<div class="col-md-4">
         		<div class="form-group">
         			<label>No Telepon</label>
-        			<input type="text" name="hp_wa_ayah" placeholder="No telepon Ayah...." class="form-control" value="<?= $siswa['hp_wa_ayah']; ?>">
+        			<input type="number" name="hp_wa_ayah" placeholder="No telepon Ayah...." class="form-control" value="<?= $siswa['hp_wa_ayah']; ?>">
         		</div>
         	</div>
 
@@ -193,8 +227,8 @@
 
         	<div class="col-md-5">
         		<div class="form-group">
-        			<label>Tanggal Lahir</label>
-        			<input type="text" name="tanggal_lahir_ibu" placeholder="Tanggal lahir..." class="form-control" value="<?= $siswa['tanggal_lahir_ibu']; ?>">
+        			<label>Tanggal Lahir Ibu</label>
+                   <input class="form-control" id="datepicker" name="tanggal_lahir_ibu"  value="<?= date('m/d/Y', $siswa['tanggal_lahir_ibu']); ?>" autocomplete="off"">
         		</div>
         	</div>
         	<div class="col-md-4">
@@ -220,14 +254,14 @@
         	<div class="col-md-4">
         		<div class="form-group">
         			<label>Penghasilan Perbulan</label>
-        			<input type="number" requied name="penghasilan_perbulan_ibu" placeholder="jika tida ada, isi -." class="form-control" value="<?= $siswa['penghasilan_perbulan_ibu']; ?>" required>
+        			<input type="number" requied name="penghasilan_perbulan_ibu" placeholder="jika tida ada, isi 0." class="form-control" value="<?= $siswa['penghasilan_perbulan_ibu']; ?>" required>
         		</div>
         	</div>
 
         	<div class="col-md-4">
         		<div class="form-group">
         			<label>No Telepon</label>
-        			<input type="text" name="hp_wa_ibu" placeholder="No telepon...." class="form-control" value="<?= $siswa['hp_wa_ibu']; ?>">
+        			<input type="number" name="hp_wa_ibu" placeholder="No telepon...." class="form-control" value="<?= $siswa['hp_wa_ibu']; ?>">
         		</div>
         	</div>
 
@@ -246,25 +280,3 @@
 		</div>
 	</div>
 </div>
-
-<div class="col-lg">    
-    <div class="panel panel-primary">
-        <div class="panel-heading">
-            Persyaratan
-        </div>
-        <div class="panel-body">
-            <?= form_open_multipart('ppdb/document'); ?>
-            <div class="form-group">
-                    
-                    <label>Persyaratan</label>
-                    <input type="hidden" name="ident" value="<?= $siswa['id_siswa']; ?>">
-                    <input type="file" name="akta" class="form-control"><br>
-                    <button type="submit" class="btn btn-primary" onclick="return confirm('apakah file sudah benar.?')">Upload</button>
-                
-                    <a href="<?= base_url('assets/ppdb/' . $siswa['akta']); ?>">Download Document Anda</a>
-                
-            </div>
-
-            
-        </div>
-    </div>

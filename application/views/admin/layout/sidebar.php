@@ -59,6 +59,9 @@
                         <li>
                             <a href="<?= base_url('ppdb/status'); ?>"><i class="fa fa-file fa-fw"></i> Status Penerimaan</a>
                         </li>
+                        <li>
+                            <a href="<?= base_url('ppdb/documents'); ?>"><i class="fa fa-file fa-fw"></i> Document PPDB</a>
+                        </li>
                     </ul>
                 </li>
 

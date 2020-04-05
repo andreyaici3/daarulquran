@@ -102,12 +102,60 @@ class Ppdb extends CI_Controller {
 		}
 	}
 
+	public function documents()
+	{
+		if ($this->session->userdata('level') == 1) {
+			$this->load->model('M_ppdb');
+			$data = [
+				'title' => 'Admin',
+				'title2' => 'Document',
+				'siswa' => $this->M_ppdb->getAll(),
+				'document' => $this->M_ppdb->getDocs(),
+				'setup' => setWeb()
+			];
+
+			_lib('admin/ppdb/doc', $data);		
+		} else {
+			redirect('dashboard');
+		}
+	}
+
 	public function terima($id)
 	{
 		if ($this->session->userdata('level') == 1) {
 			$this->load->model('M_ppdb');
 			$hasil = $this->M_ppdb->terima($id);
 			echo $hasil;die;
+		} else {
+			redirect('dashboard');
+		}
+	}
+
+	public function approve($type, $file)
+	{
+		if ($this->session->userdata('level') == 1) {
+			$this->load->model('M_ppdb');
+			$this->M_ppdb->approve($type, $file);
+		} else {
+			redirect('dashboard');
+		}
+	}
+
+	public function reject($type, $file)
+	{
+		if ($this->session->userdata('level') == 1) {
+			$this->load->model('M_ppdb');
+			$this->M_ppdb->reject($type, $file);
+		} else {
+			redirect('dashboard');
+		}
+	}
+
+	public function remove($type, $file)
+	{
+		if ($this->session->userdata('level') == 1) {
+			$this->load->model('M_ppdb');
+			$this->M_ppdb->remove($type, $file);
 		} else {
 			redirect('dashboard');
 		}
@@ -151,7 +199,7 @@ class Ppdb extends CI_Controller {
 			$this->form_validation->set_rules('username','Username','required');
 
 			if ($this->form_validation->run() == true) {
-				$this->M_ppdb->edit();
+				$this->M_ppdb->editA();
 				fSukses('Data Berhasil Di Ubah','ppdb/edit/' . urlencode(base64_encode(base64_encode($id))));
 			}
 

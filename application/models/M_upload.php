@@ -466,7 +466,7 @@ class M_upload extends CI_Model {
 			$config = [
 				'upload_path' => './assets/file/siswa/',
 				'allowed_types' => 'jpg|jpeg|png|bmp',
-				'file_name' => 'FOTO-' . uniqid() . '.pdf',
+				'file_name' => 'FOTO-' . uniqid() . '.jpg',
 				'max_size' => '102048'
 			];
 

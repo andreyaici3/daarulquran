@@ -16,7 +16,7 @@
                             <th>No Whatsapp</th>
                             <th>Status Akun</th>
                             <th>Status Siswa</th>
-                            <th>Lihat Detail</th>
+                            
                             <th width="50" class="text-center">Action</th>
                         </tr>
                     </thead>
@@ -48,9 +48,7 @@
 
                     				 ?>
                     			</td>
-                    			<td>
-                    				
-                    			</td>
+                    			
                     			<td class="text-center">
 	                               <?= act('edit', $sw['id_siswa'],'ppdb/edit/') ?>
 	                               <?= act('hapus',$sw['id_siswa'],'ppdb/delete',['modal' => 'hpsModalSiswaPpdb']) ?>

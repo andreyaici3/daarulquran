@@ -10,7 +10,7 @@
             <?= form_open_multipart('upload/document/foto'); ?>
                 <div class="form-group">
                     <label>Foto</label>
-                    <input type="file" name="akta" class="form-control">
+                    <input type="file" name="foto" class="form-control">
                     <input type="hidden" name="ident" value="<?= $person['id_siswa']; ?>">
                 </div>
                 <div class="form-group">
