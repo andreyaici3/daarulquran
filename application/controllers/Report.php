@@ -30,7 +30,7 @@ class Report extends CI_Controller {
     		$logo = base_url('assets/images/report/mts.jpg');
     	} else {
     		$jp = "MA";
-    		$logo = base_url('assets/images/report/ma.jpg');
+    		$logo = base_url('assets/images/report/ma.png');
     	}
 
     	if ($siswa['penghasilan_perbulan_ibu'] != 0) {
