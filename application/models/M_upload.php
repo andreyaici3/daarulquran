@@ -238,9 +238,12 @@ class M_upload extends CI_Model {
 				fGagal('Ktp Gagal Di upload','ppdb/dashboard');
 			}
 
-			if (file_exists(FCPATH . 'assets/file/siswa/' . $query['ktp'])) {
-				unlink(FCPATH . 'assets/file/siswa/' . $query['ktp']);
-			} 
+			if ($query['ktp'] != '') {
+				if (file_exists(FCPATH . 'assets/file/siswa/' . $query['ktp'])) {
+					unlink(FCPATH . 'assets/file/siswa/' . $query['ktp']);
+				} 
+			}
+				
 
 
 			$data = [
@@ -286,9 +289,11 @@ class M_upload extends CI_Model {
 				fGagal('kartu keluarga Gagal Di upload','ppdb/dashboard');
 			}
 
-			if (file_exists(FCPATH . 'assets/file/siswa/' . $query['kk'])) {
-				unlink(FCPATH . 'assets/file/siswa/' . $query['kk']);
-			} 
+			if ($query['kk'] != '') {
+				if (file_exists(FCPATH . 'assets/file/siswa/' . $query['kk'])) {
+					unlink(FCPATH . 'assets/file/siswa/' . $query['kk']);
+				} 
+			}
 
 
 			$data = [
@@ -334,10 +339,11 @@ class M_upload extends CI_Model {
 				fGagal('Ijasah Gagal Di upload','ppdb/dashboard');
 			}
 
-			if (file_exists(FCPATH . 'assets/file/siswa/' . $query['ijasah'])) {
-				unlink(FCPATH . 'assets/file/siswa/' . $query['ijasah']);
-			} 
-
+			if ($query['ijasah'] != '') {
+				if (file_exists(FCPATH . 'assets/file/siswa/' . $query['ijasah'])) {
+					unlink(FCPATH . 'assets/file/siswa/' . $query['ijasah']);
+				} 
+			}
 
 			$data = [
 				'ijasah' => $nama,
@@ -382,9 +388,11 @@ class M_upload extends CI_Model {
 				fGagal('SKHUN Gagal Di upload','ppdb/dashboard');
 			}
 
-			if (file_exists(FCPATH . 'assets/file/siswa/' . $query['skhun'])) {
-				unlink(FCPATH . 'assets/file/siswa/' . $query['skhun']);
-			} 
+			if ($query['skhun'] != '') {
+				if (file_exists(FCPATH . 'assets/file/siswa/' . $query['skhun'])) {
+					unlink(FCPATH . 'assets/file/siswa/' . $query['skhun']);
+				} 
+			}
 
 
 			$data = [
@@ -430,10 +438,11 @@ class M_upload extends CI_Model {
 				fGagal('Akta Kelahiran Gagal Di upload','ppdb/dashboard');
 			}
 
-			if (file_exists(FCPATH . 'assets/file/siswa/' . $query['akta'])) {
-				unlink(FCPATH . 'assets/file/siswa/' . $query['akta']);
-			} 
-
+			if ($query['akta'] != '') {
+				if (file_exists(FCPATH . 'assets/file/siswa/' . $query['akta'])) {
+					unlink(FCPATH . 'assets/file/siswa/' . $query['akta']);
+				} 
+			}
 
 			$data = [
 				'akta' => $nama,
@@ -478,8 +487,10 @@ class M_upload extends CI_Model {
 				fGagal('Foto Gagal Di upload','ppdb/dashboard');
 			}
 
-			if (file_exists(FCPATH . 'assets/file/siswa/' . $query['foto'])) {
-				unlink(FCPATH . 'assets/file/siswa/' . $query['foto']);
+			if ($query['foto'] != '') {
+				if (file_exists(FCPATH . 'assets/file/siswa/' . $query['foto'])) {
+					unlink(FCPATH . 'assets/file/siswa/' . $query['foto']);
+				}
 			} 
 
 
