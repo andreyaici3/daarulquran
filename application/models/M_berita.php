@@ -9,7 +9,7 @@ class M_berita extends CI_Model {
 		$config = [
 			'upload_path' => './assets/images/berita/',
 			'allowed_types' => 'jpg|jpeg|gif|png',
-			'max_size' => '2048'
+			'max_size' => '12048'
 		];
 
 		$this->load->library('upload',$config);

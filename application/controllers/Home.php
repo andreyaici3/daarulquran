@@ -114,7 +114,7 @@ class Home extends CI_Controller {
 	public function pengumuman()
 	{
 		$data = [
-			'file' => $this->db->get('tbl_pengumuman')->result_array()
+			'file' => $this->db->order_by('id_pengumuman','DESC')->get('tbl_pengumuman')->result_array()
 		];
 		$this->load->view('templates/front/head',$data);
 		$this->load->view('templates/front/header');
