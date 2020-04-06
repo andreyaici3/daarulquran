@@ -4,7 +4,7 @@
 /**
 * 
 */
-class pdf
+class Pdf
 {
 	function __construct()
 	{
