@@ -66,10 +66,10 @@ class Galery extends CI_Controller {
 		
 	}
 
-	public function delete()
+	public function delete($id)
 	{
 		if ($this->session->userdata('level') == 1) {
-			$this->M_galery->delete();
+			$this->M_galery->delete($id);
 		} else {
 			redirect('dashboard');
 		}

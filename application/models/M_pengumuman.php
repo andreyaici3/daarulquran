@@ -38,9 +38,8 @@ class M_pengumuman extends CI_Model {
 		fSukses('Pengumuman Berhasil Di Edit','pengumuman');
 	}
 
-	public function delete()
+	public function delete($id)
 	{
-		$id = $this->input->post('id');
 		$this->db->where('id_pengumuman',$id);
 		$this->db->delete('tbl_pengumuman');
 		fSukses('Data Berhasil Dihapus','pengumuman');

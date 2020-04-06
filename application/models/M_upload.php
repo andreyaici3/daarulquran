@@ -177,9 +177,9 @@ class M_upload extends CI_Model {
 		fSukses('Data Berhasil Di Ubah','upload');
 	}
 
-	public function delete()
+	public function delete($id)
 	{
-		$id = $this->input->post('id');
+		// $id = $this->input->post('id');
 		$file = $this->db->get_where('tbl_file',['id_file' => $id])->row_array();
 		$file_name = $file['nama_file'];
 		unlink(FCPATH . 'assets/file/' . $file_name);

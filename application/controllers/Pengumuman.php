@@ -66,10 +66,10 @@ class Pengumuman extends CI_Controller
 		
 	}
 
-	public function delete()
+	public function delete($id)
 	{
 		if ($this->session->userdata('level') == 1) {
-			$this->M_pengumuman->delete();
+			$this->M_pengumuman->delete($id);
 		} else {
 			redirect('dashboard');
 		}

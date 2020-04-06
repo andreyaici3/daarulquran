@@ -68,10 +68,10 @@ class Guru extends CI_Controller {
 		
 	}
 
-	public function delete()
+	public function delete($id)
 	{
 		if ($this->session->userdata('level') == 1) {
-			$this->M_guru->delete();
+			$this->M_guru->delete($id);
 		} else {
 			redirect('dashboard');
 		}

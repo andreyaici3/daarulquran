@@ -108,9 +108,9 @@ class M_guru extends CI_Model
 		
 	}
 
-	public function delete()
+	public function delete($id)
 	{
-		$id = $this->input->post('id');
+		// $id = $this->input->post('id');
 		$guru = $this->getGuru($id);
 		$foto_lama = $guru['foto_guru'];
 		if (file_exists(FCPATH . 'assets/images/guru/' . $foto_lama)) {

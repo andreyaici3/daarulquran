@@ -31,9 +31,9 @@ class Mapel extends CI_Controller {
 		}
 	}
 
-	public function delete()
+	public function delete($id)
 	{
-		$this->M_mapel->delete();
+		$this->M_mapel->delete($id);
 	}
 
 

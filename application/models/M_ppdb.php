@@ -243,14 +243,14 @@ class M_ppdb extends CI_Model {
 		$this->upload->display_errors();
 	}
 
-	public function delete()
+	public function delete($id)
 	{
-		$id = $this->input->post('id');
+		
 		
 
 		$file = $this->db->get_where('tbl_document',['id_siswa' => $id])->row_array();
 		$path = FCPATH . 'assets/file/siswa/';
-		// FCPATH . 'assets/file/siswa/' . $result[$type]
+	
 		
 
 		if ($file['ktp'] != '') {

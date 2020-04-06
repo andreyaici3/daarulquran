@@ -79,9 +79,8 @@ class M_berita extends CI_Model {
 		
 	}
 
-	public function delete()
+	public function delete($id)
 	{
-		$id = $this->input->post('id');
 		$query = $this->db->get_where('tbl_berita',['id_berita' => $id])->row_array();
 		if ($query['gambar_berita'] != '') {
 			if (file_exists(FCPATH . 'assets/images/berita/' . $query['gambar_berita'])) {

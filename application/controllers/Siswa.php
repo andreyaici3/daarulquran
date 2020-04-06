@@ -76,10 +76,10 @@ class Siswa extends CI_Controller {
 		
 	}
 
-	public function delete()
+	public function delete($id)
 	{
 		if ($this->session->userdata('level') == 1) {
-			$this->M_siswa->delete();
+			$this->M_siswa->delete($id);
 		} else {
 			redirect('dashboard');
 		}

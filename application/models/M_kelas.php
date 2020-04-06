@@ -33,9 +33,8 @@ class M_kelas extends CI_Model {
 		fSukses('kelas Berhasil Di Edit','kelas');
 	}
 
-	public function delete()
+	public function delete($id)
 	{
-		$id = $this->input->post('id');
 		$this->db->where('id_kelas',$id);
 		$this->db->delete('tbl_kelas');
 		fSukses('Data Berhasil Dihapus','kelas');

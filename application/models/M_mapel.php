@@ -22,9 +22,9 @@ class M_mapel extends CI_Model {
 		redirect('mapel');
 	}
 
-	public function delete()
+	public function delete($id)
 	{
-		$id = $this->input->post('id');
+		// $id = $this->input->post('id');
 		$this->db->where('id',$id);
 		$ck = $this->db->delete('tbl_mapel');
 		if ($id != 'NULL') {

@@ -161,11 +161,11 @@ class Ppdb extends CI_Controller {
 		}
 	}
 
-	public function delete()
+	public function delete($id)
 	{
 		if ($this->session->userdata('level') == 1) {
 			$this->load->model('M_ppdb');
-			$this->M_ppdb->delete();
+			$this->M_ppdb->delete($id);
 		} else {
 			redirect('dashboard');
 		}

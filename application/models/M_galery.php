@@ -85,9 +85,8 @@ class M_galery extends CI_Model {
 		fSukses('album Berhasil Di Edit','galery');
 	}
 
-	public function delete()
+	public function delete($id)
 	{
-		$id = $this->input->post('id');
 		$query = $this->db->get_where('tbl_album',['id_album' => $id])->row_array();
 		$id_foto  = $this->db->get_where('tbl_foto',['id_album' => $id])->result_array();
 

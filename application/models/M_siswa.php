@@ -97,9 +97,8 @@ class M_siswa extends CI_Model {
 		
 	}
 
-	public function delete()
+	public function delete($id)
 	{
-		$id = $this->input->post('id');
 		$siswa = $this->getSiswa($id);
 		$foto_lama = $siswa['foto_siswa'];
 		if (file_exists(FCPATH . 'assets/images/siswa/' . $foto_lama)) {
