@@ -19,6 +19,7 @@ class M_galery extends CI_Model {
 		$config = [
 			'upload_path' => './assets/images/galery/',
 			'allowed_types' => 'jpg|jpeg|gif|png',
+			'file_name' => date('Ym', time()) . '-' . uniqid() . '.jpg',
 			'max_size' => '2048'
 		];
 
@@ -26,7 +27,7 @@ class M_galery extends CI_Model {
 		$this->upload->initialize($config);
 
 		if ($this->upload->do_upload('sampul')) {
-			$sampul = $_FILES['sampul']['name'];
+			$sampul = $config['file_name'];
 		} else {
 			$sampul = 'default.jpg';
 		}
@@ -87,6 +88,17 @@ class M_galery extends CI_Model {
 	public function delete()
 	{
 		$id = $this->input->post('id');
+		$query = $this->db->get_where('tbl_album',['id_album' => $id])->row_array();
+		$id_foto  = $this->db->get_where('tbl_foto',['id_album' => $id])->result_array();
+
+		foreach ($id_foto as $foto) {
+			unlink(FCPATH . 'assets/images/galery/' . $foto['foto']);
+		}
+
+		if ($query['sampul'] != 'default.jpg') {
+			unlink(FCPATH . 'assets/images/galery/' . $query['sampul']);
+		}
+
 		$this->db->where('id_album',$id);
 		$this->db->delete('tbl_album');
 		fSukses('Data Berhasil Dihapus','galery');
@@ -109,6 +121,7 @@ class M_galery extends CI_Model {
 		$config = [
 			'upload_path' => './assets/images/galery/',
 			'allowed_types' => 'jpg|jpeg|gif|png',
+			'file_name' => date('Ym', time()) . urlencode($_FILES['foto']['name']),
 			'max_size' => '2048'
 		];
 
@@ -116,7 +129,7 @@ class M_galery extends CI_Model {
 		$this->upload->initialize($config);
 
 		if ($this->upload->do_upload('foto')) {
-			$foto = $_FILES['foto']['name'];
+			$foto = $config['file_name'];
 		} else {
 			$foto = 'default.jpg';
 		}

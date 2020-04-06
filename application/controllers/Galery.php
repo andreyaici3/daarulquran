@@ -81,7 +81,7 @@ class Galery extends CI_Controller {
 			'title' => 'Admin',
 			'title2' => 'Tambah Foto: ',
 			'album' => $this->db->get_where('tbl_album', ['id_album' => $album])->row_array(),
-			'foto' => $this->db->get('tbl_foto')->result_array(),
+			'foto' => $this->db->get_where('tbl_foto',['id_album'=> $album])->result_array(),
 			'setup' => setWeb()
 		];
 
