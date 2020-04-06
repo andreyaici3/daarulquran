@@ -23,7 +23,7 @@ class M_berita extends CI_Model {
 
 		$data = [
 			'judul_berita' => htmlspecialchars($this->input->post('judul',true)),
-			'slug_berita' => date('Y/d/') . 'berita/' . url_title($this->input->post('judul'),'dash',true),
+			'slug_berita' => date('Y/d/') . url_title($this->input->post('judul'),'dash',true),
 			'isi_berita' => $this->input->post('isi'),
 			'gambar_berita' => $gambar_berita,
 			'tanggal_berita' => time(),
@@ -52,9 +52,13 @@ class M_berita extends CI_Model {
 
 		if ($this->upload->do_upload('gambar')) {
 			$gambar_berita = $_FILES['gambar']['name'];
-			if (file_exists(FCPATH . 'assets/images/berita/' . $gambar_lama) && $berita['gambar_berita'] != "default.jpg") {
-				unlink(FCPATH . 'assets/images/berita/' . $gambar_lama);
+			
+			if ($berita['gambar_berita'] != "default.jpg") {
+				if (file_exists(FCPATH . 'assets/images/berita/' . $berita['gambar_berita'])){
+					unlink(FCPATH . 'assets/images/berita/' . $berita['gambar_berita']);
+				}
 			}
+
 		} else {
 			$gambar_berita = 'default.jpg';
 		}
@@ -78,6 +82,12 @@ class M_berita extends CI_Model {
 	public function delete()
 	{
 		$id = $this->input->post('id');
+		$query = $this->db->get_where('tbl_berita',['id_berita' => $id])->row_array();
+		if ($query['gambar_berita'] != '') {
+			if (file_exists(FCPATH . 'assets/images/berita/' . $query['gambar_berita'])) {
+				unlink(FCPATH . 'assets/images/berita/' . $query['gambar_berita']);
+			}
+		}
 		$this->db->where('id_berita',$id);
 		$this->db->delete('tbl_berita');
 		fSukses('Data Berhasil Dihapus','berita');

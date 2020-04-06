@@ -17,7 +17,7 @@
 					<div class="course">
 						<div class="course_image"><img src="<?= base_url('assets/images/berita/' . $berita[$i]['gambar_berita']); ?>" alt=""></div>
 						<div class="course_body">
-							<h3 class="course_title"><a href="<?= $berita[$i]['slug_berita']; ?>"><?= substr(strip_tags($berita[$i]['judul_berita']),0,28); ?></a></h3>
+							<h3 class="course_title"><a href="<?= base_url('berita/post/') . $berita[$i]['slug_berita']; ?>"><?= substr(strip_tags($berita[$i]['judul_berita']),0,28); ?></a></h3>
 							<div class="course_teacher">Author: <?= $berita[$i]['name']; ?></div>
 							<div class="course_text">
 								<p><?= substr(strip_tags($berita[$i]['isi_berita']),0,100); ?>... Read More</p>

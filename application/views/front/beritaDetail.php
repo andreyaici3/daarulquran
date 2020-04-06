@@ -48,16 +48,18 @@
 							<div class="sidebar_section_title">Latest News</div>
 							<div class="sidebar_latest">
 								<!-- Latest Course -->
-								<?php foreach ($latest as $lts): ?>
+								<?php for ($i=0; $i < 6 ; $i++) : ?>
+									
+								
 									<div class="latest d-flex flex-row align-items-start justify-content-start">
-										<div class="latest_image"><div><img src="<?= base_url('assets/images/berita/' . $lts['gambar_berita']); ?>" alt=""></div></div>
+										<div class="latest_image"><div><img src="<?= base_url('assets/images/berita/' . $latest[$i]['gambar_berita']); ?>" alt=""></div></div>
 										<div class="latest_content">
-											<div class="latest_title"><a href="<?= base_url('berita/post/' . $lts['slug_berita']); ?>"><?= $lts['judul_berita']; ?></a></div>
-											<div class="latest_date"><?= date('M d, Y', $lts['tanggal_berita']); ?></div>
+											<div class="latest_title"><a href="<?= base_url('berita/post/' . $latest[$i]['slug_berita']); ?>"><?= $latest[$i]['judul_berita']; ?></a></div>
+											<div class="latest_date"><?= date('M d, Y', $latest[$i]['tanggal_berita']); ?></div>
 										</div>
 									</div>	
-								<?php endforeach ?>
 								
+								<?php endfor; ?>
 
 								
 
