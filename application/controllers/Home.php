@@ -23,7 +23,8 @@ class Home extends CI_Controller {
 		$data = [
 			'berita' => beritaJoinUser(),
 			'setup' => setWeb(),
-			'pengumuman' => $this->db->get('tbl_pengumuman')->result_array()
+			'pengumuman' => $this->db->order_by('id_pengumuman','DESC')
+						->get('tbl_pengumuman')->result_array()
 		];
 		$this->load->view('templates/front/head_home',$data);
 		$this->load->view('templates/front/header');
