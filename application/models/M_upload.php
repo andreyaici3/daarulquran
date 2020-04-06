@@ -8,6 +8,7 @@ class M_upload extends CI_Model {
 		$config = [
 			'upload_path' => './assets/file/',
 			'allowed_types' => 'pdf|docx',
+			'file_name' => uniqid() . '-' . urlencode($_FILES['doc']['name']),
 			'max_size' => '102048'
 		];
 
@@ -15,7 +16,7 @@ class M_upload extends CI_Model {
 		$this->upload->initialize($config);
 
 		if ($this->upload->do_upload('doc')) {
-			$file = $_FILES['doc']['name'];
+			$file = $config['file_name'];
 		} else {
 			$this->upload->display_errors('<p>', '</p>');
 			fGagal('File Gagal Upload','upload');
@@ -149,6 +150,7 @@ class M_upload extends CI_Model {
 		$config = [
 			'upload_path' => './assets/file/',
 			'allowed_types' => 'pdf|docx',
+			'file_name' => uniqid() . '-' . urlencode($_FILES['doc']['name']),
 			'max_size' => '102048'
 		];
 
@@ -156,7 +158,7 @@ class M_upload extends CI_Model {
 		$this->upload->initialize($config);
 
 		if ($this->upload->do_upload('doc')) {
-			$file = $_FILES['doc']['name'];
+			$file = $config['file_name'];
 			unlink(FCPATH . 'assets/file/' . $file_lama);
 		} else {
 			$file = $file_lama;

@@ -93,6 +93,8 @@ class M_galery extends CI_Model {
 
 		foreach ($id_foto as $foto) {
 			unlink(FCPATH . 'assets/images/galery/' . $foto['foto']);
+			$this->db->where('id_foto', $foto['id_foto']);
+			$this->db->delete('tbl_foto');
 		}
 
 		if ($query['sampul'] != 'default.jpg') {
@@ -121,7 +123,7 @@ class M_galery extends CI_Model {
 		$config = [
 			'upload_path' => './assets/images/galery/',
 			'allowed_types' => 'jpg|jpeg|gif|png',
-			'file_name' => date('Ym', time()) . urlencode($_FILES['foto']['name']),
+			'file_name' => uniqid() . '-' . urlencode($_FILES['foto']['name']),
 			'max_size' => '2048'
 		];
 
