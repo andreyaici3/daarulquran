@@ -84,7 +84,7 @@ class Home extends CI_Controller {
 	{
 		$data = [
 			'galery' => $this->db->get_where('tbl_album', ['id_album' => $id])->row_array(),
-			'foto' => $this->M_galery->joinFoto($id)
+			'foto' => $this->M_galery->get_where('tbl_foto', ['id_album' => $id])->result_array()
 		];
 
 		$this->load->view('templates/front/head',$data);
