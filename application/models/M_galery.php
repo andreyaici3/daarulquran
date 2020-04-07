@@ -20,7 +20,7 @@ class M_galery extends CI_Model {
 			'upload_path' => './assets/images/galery/',
 			'allowed_types' => 'jpg|jpeg|gif|png',
 			'file_name' => date('Ym', time()) . '-' . uniqid() . '.jpg',
-			'max_size' => '2048'
+			'max_size' => '12048'
 		];
 
 		$this->load->library('upload',$config);
@@ -61,7 +61,7 @@ class M_galery extends CI_Model {
 				'upload_path' => './assets/images/galery/',
 				'allowed_types' => 'jpg|jpeg|gif|png',
 				'file_name' => $sampul,
-				'max_size' => '2048'
+				'max_size' => '12048'
 			];
 
 			$this->load->library('upload',$config);
@@ -123,7 +123,7 @@ class M_galery extends CI_Model {
 			'upload_path' => './assets/images/galery/',
 			'allowed_types' => 'jpg|jpeg|gif|png',
 			'file_name' => uniqid() . '-' . urlencode($_FILES['foto']['name']),
-			'max_size' => '2048'
+			'max_size' => '12048'
 		];
 
 		$this->load->library('upload',$config);
