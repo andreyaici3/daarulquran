@@ -74,7 +74,7 @@ class Upload extends CI_Controller {
 		
 	}
 
-	public function delete($$id)
+	public function delete($id)
 	{
 		if ($this->session->userdata('level') == 1) {
 			$this->M_upload->delete($id);
