@@ -8,7 +8,8 @@ class M_berita extends CI_Model {
 		
 		$config = [
 			'upload_path' => './assets/images/berita/',
-			'allowed_types' => 'jpg|jpeg|gif|png',
+			'allowed_types' => 'jpg|jpeg|gif|png|bmp',
+			'file_name' => uniqid() . '-' . urlencode($_FILES['gambar']['name']),
 			'max_size' => '12048'
 		];
 
@@ -16,10 +17,12 @@ class M_berita extends CI_Model {
 		$this->upload->initialize($config);
 
 		if ($this->upload->do_upload('gambar')) {
-			$gambar_berita = $_FILES['gambar']['name'];
+			$gambar_berita = $config['file_name'];
 		} else {
 			$gambar_berita = 'default.jpg';
 		}
+
+		
 
 		$data = [
 			'judul_berita' => htmlspecialchars($this->input->post('judul',true)),
