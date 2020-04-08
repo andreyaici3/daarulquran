@@ -47,7 +47,8 @@ class M_berita extends CI_Model {
 		$config = [
 			'upload_path' => './assets/images/berita/',
 			'allowed_types' => 'jpg|jpeg|gif|png',
-			'max_size' => '2048'
+			'file_name' => uniqid() . '-' . urlencode($_FILES['gambar']['name']),
+			'max_size' => '12048'
 		];
 
 		$this->load->library('upload',$config);
@@ -55,7 +56,6 @@ class M_berita extends CI_Model {
 
 		if ($this->upload->do_upload('gambar')) {
 			$gambar_berita = $_FILES['gambar']['name'];
-			
 			if ($berita['gambar_berita'] != "default.jpg") {
 				if (file_exists(FCPATH . 'assets/images/berita/' . $berita['gambar_berita'])){
 					unlink(FCPATH . 'assets/images/berita/' . $berita['gambar_berita']);
@@ -63,7 +63,7 @@ class M_berita extends CI_Model {
 			}
 
 		} else {
-			$gambar_berita = 'default.jpg';
+			$gambar_berita = $berita['gambar_berita'];
 		}
 
 		$data = [
