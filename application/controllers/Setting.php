@@ -48,5 +48,48 @@ class Setting extends CI_Controller {
 		}
 	}
 
+	public function setProfile(){
+		if ($this->session->userdata('level') == 1) {
+			$data = [
+				'title' => 'Admin',
+				'title2' => 'Halaman Profile',
+				'setup' => setWeb()
+			];
+
+			$this->form_validation->set_rules('id','ID','required');
+
+			if ($this->form_validation->run() == true) {
+				//untuk model
+				if ($_FILES['pimp']['error'] == 0) {
+					$this->M_setting->fotoPimp();
+				}
+
+				if ($_FILES['ra']['error'] == 0) {
+					$this->M_setting->fotoRa();
+				}
+
+				if ($_FILES['mts']['error'] == 0) {
+					$this->M_setting->fotoMts();
+				}
+
+				if ($_FILES['ma']['error'] == 0) {
+					$this->M_setting->fotoMa();
+				}
+
+
+
+				fSukses('Data Berhasil Di update','setting/setProfile');
+				//untuk model
+
+			
+
+			}
+
+			_lib('admin/setting/profile', $data);		
+		} else {
+			redirect('dashboard');
+		}
+	}
+
 
 }

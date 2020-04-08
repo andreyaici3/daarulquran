@@ -75,6 +75,9 @@
                         <li>
                             <a href="<?= base_url('setting/headerC'); ?>"><i class="fa fa-list fa-fw"></i> Header Home</a>
                         </li>
+                        <li>
+                            <a href="<?= base_url('setting/setProfile'); ?>"><i class="fa fa-list fa-fw"></i> Page Profile</a>
+                        </li>
                     </ul>
                 </li>
                 

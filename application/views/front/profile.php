@@ -18,20 +18,25 @@
 	<div class="courses">
 		<div class="container">
 			<div class="row">
-				<div class="col-sm-4 text-center">
-					<img src="<?= base_url('assets/images/kepsek.jpeg'); ?>" width="80%" alt=""><br><br>	
+				<div class="col-sm-3 text-center">
+					<img src="<?= base_url('assets/images/config/' . $set['foto_pimp']); ?>" width="80%" alt=""><br><br>	
 					<h4>KH. Ma'sum Abdullah</h4>
 					<h6>Pimpinan Yayasan Daarul Qur'an</h6>
 				</div>
-				<div class="col-sm-4 text-center">
-					<img src="<?= base_url('assets/images/kepsek.jpeg'); ?>" width="80%" alt=""><br><br>	
+				<div class="col-sm-3 text-center">
+					<img src="<?= base_url('assets/images/config/' . $set['foto_kepala_ra'] ); ?>" width="80%" alt=""><br><br>	
+					<h4>Nama Kepala RA</h4>
+					<h6>Kepala RA Daarul Qur'an</h6>
+				</div>
+				<div class="col-sm-3 text-center">
+					<img src="<?= base_url('assets/images/config/' . $set['foto_kepala_mts'] ); ?>" width="80%" alt=""><br><br>	
+					<h4>Nama Kepala Mts</h4>
+					<h6>Kepala Mts Daarul Qur'an</h6>
+				</div>
+				<div class="col-sm-3 text-center">
+					<img src="<?= base_url('assets/images/config/' . $set['foto_kepala_ma'] ); ?>" width="80%" alt=""><br><br>	
 					<h4>Nama Kepala MA</h4>
 					<h6>Kepala MA Daarul Qur'an</h6>
-				</div>
-				<div class="col-sm-4 text-center">
-					<img src="<?= base_url('assets/images/kepsek.jpeg'); ?>" width="80%" alt=""><br><br>	
-					<h4>Nama Kepala Mts</h4>
-					<h6>Kepala MTs Daarul Qur'an</h6>
 				</div>
 			</div>
 			</div>
