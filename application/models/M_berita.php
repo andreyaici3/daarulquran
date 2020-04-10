@@ -68,7 +68,7 @@ class M_berita extends CI_Model {
 
 		$data = [
 			'judul_berita' => htmlspecialchars($this->input->post('judul',true)),
-			'slug_berita' => date('Y/d/') . '/' . url_title($this->input->post('judul'),'dash',true),
+			'slug_berita' => date('Y/d/') .  url_title($this->input->post('judul'),'dash',true),
 			'isi_berita' => $this->input->post('isi'),
 			'gambar_berita' => $gambar_berita,
 			'terakhir_diupdate' => time(),
