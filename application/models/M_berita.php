@@ -9,7 +9,7 @@ class M_berita extends CI_Model {
 		$config = [
 			'upload_path' => './assets/images/berita/',
 			'allowed_types' => 'jpg|jpeg|gif|png|bmp',
-			'file_name' => uniqid() . '-' . urlencode($_FILES['gambar']['name']),
+			'file_name' => uniqid() . '.jpg',
 			'max_size' => '12048'
 		];
 
@@ -47,7 +47,7 @@ class M_berita extends CI_Model {
 		$config = [
 			'upload_path' => './assets/images/berita/',
 			'allowed_types' => 'jpg|jpeg|gif|png',
-			'file_name' => uniqid() . '-' . urlencode($_FILES['gambar']['name']),
+			'file_name' => uniqid() . '.jpg',
 			'max_size' => '12048'
 		];
 
