@@ -76,6 +76,8 @@ class Setting extends CI_Controller {
 					$this->M_setting->fotoMa();
 				}
 
+				$this->M_setting->descripProfile();
+
 
 
 				fSukses('Data Berhasil Di update','setting/setProfile');

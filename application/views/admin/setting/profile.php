@@ -18,7 +18,15 @@
                         <img src="<?= base_url('assets/images/config/' . $setup['foto_pimp']); ?>" alt="" class="img-responsive">    
                     </div><br><br>
                     <input type="file" name="pimp" class="form-control">   
-               </div>	
+               </div>
+                <div class="form-group">
+                   <label for="nama_pimp">Nama Pimpinan</label>
+                   <input type="text" class="form-control" name="nama_pimp" value="<?= $setup['nama_pimp']; ?>">
+               </div>   	
+               <div class="form-group">
+                   <label for="nama_pimp">Sub Pimpinan</label>
+                   <input type="text" class="form-control" name="sub_pimp" value="<?= $setup['sub_pimp']; ?>">
+               </div>  
         	</div>
             <div class="col-md-3">
                 <div class="text-center">
@@ -29,7 +37,15 @@
                         <img src="<?= base_url('assets/images/config/' . $setup['foto_kepala_ra']); ?>" alt="" class="img-responsive"> 
                     </div><br><br>
                     <input type="file" name="ra" class="form-control">   
-               </div>   
+               </div> 
+                <div class="form-group">
+                   <label for="nama_ra">Kepala Ra</label>
+                   <input type="text" class="form-control" name="nama_ra" value="<?= $setup['nama_kepala_ra']; ?>">
+               </div>       
+               <div class="form-group">
+                   <label for="nama_ra">Sub Kepala Ra</label>
+                   <input type="text" class="form-control" name="sub_ra" value="<?= $setup['sub_kepala_ra']; ?>">
+               </div>    
             </div>
             <div class="col-md-3">
                 <div class="text-center">
@@ -40,7 +56,15 @@
                          <img src="<?= base_url('assets/images/config/' . $setup['foto_kepala_mts']); ?>" alt="" class="img-responsive"> 
                     </div><br><br>
                     <input type="file" name="mts" class="form-control">   
-               </div>   
+               </div>
+                <div class="form-group">
+                   <label for="nama_mts">Kepala Mts</label>
+                   <input type="text" class="form-control" name="nama_mts" value="<?= $setup['nama_kepala_mts']; ?>">
+               </div>       
+               <div class="form-group">
+                   <label for="nama_mts">Sub Kepala Mts</label>
+                   <input type="text" class="form-control" name="sub_mts" value="<?= $setup['sub_kepala_mts']; ?>">
+               </div>    
             </div>
             <div class="col-md-3">
                 <div class="text-center">
@@ -51,6 +75,14 @@
                         <img src="<?= base_url('assets/images/config/' . $setup['foto_kepala_ma']); ?>" alt="" class="img-responsive"> 
                     </div><br><br>
                     <input type="file" name="ma" class="form-control">   
+               </div>   
+               <div class="form-group">
+                   <label for="nama_ma">Kepala Ma</label>
+                   <input type="text" class="form-control" name="nama_ma" value="<?= $setup['nama_kepala_ma']; ?>">
+               </div>       
+               <div class="form-group">
+                   <label for="nama_ma">Sub Kepala Ma</label>
+                   <input type="text" class="form-control" name="sub_ma" value="<?= $setup['sub_kepala_ma']; ?>">
                </div>   
             </div>
         </div>
