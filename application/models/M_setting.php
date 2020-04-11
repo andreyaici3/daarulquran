@@ -115,4 +115,22 @@ class M_setting extends CI_Model {
 		$this->db->update('web');
 	}
 
+	public function descripProfile(){
+		$data = [
+			'nama_pimp' => htmlspecialchars($this->input->post('nama_pimp',true)),
+			'sub_pimp' => htmlspecialchars($this->input->post('sub_pimp',true)),
+			'nama_kepala_ra' => htmlspecialchars($this->input->post('nama_ra',true)),
+			'sub_kepala_ra' => htmlspecialchars($this->input->post('sub_ra',true)),
+			'nama_kepala_mts' => htmlspecialchars($this->input->post('nama_mts',true)),
+			'sub_kepala_mts' => htmlspecialchars($this->input->post('sub_mts',true)),
+			'nama_kepala_ma' => htmlspecialchars($this->input->post('nama_ma',true)),
+			'sub_kepala_ma' => htmlspecialchars($this->input->post('sub_ma',true))
+		];
+
+		$this->db->set($data);
+		$this->db->where('id',1);
+		$this->db->update('web');
+
+	}
+
 }

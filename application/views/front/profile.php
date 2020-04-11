@@ -20,23 +20,23 @@
 			<div class="row">
 				<div class="col-sm-3 text-center">
 					<img src="<?= base_url('assets/images/config/' . $set['foto_pimp']); ?>" width="80%" alt=""><br><br>	
-					<h4>KH. Ma'sum Abdullah</h4>
-					<h6>Pimpinan Yayasan Daarul Qur'an</h6>
+					<h4><?= $set['nama_pimp']; ?></h4>
+					<h6><?= $set['sub_pimp']; ?></h6>
 				</div>
 				<div class="col-sm-3 text-center">
 					<img src="<?= base_url('assets/images/config/' . $set['foto_kepala_ra'] ); ?>" width="80%" alt=""><br><br>	
-					<h4>Nama Kepala RA</h4>
-					<h6>Kepala RA Daarul Qur'an</h6>
+					<h4><?= $set['nama_kepala_ra']; ?></h4>
+					<h6><?= $set['sub_kepala_ra'] ; ?></h6>
 				</div>
 				<div class="col-sm-3 text-center">
 					<img src="<?= base_url('assets/images/config/' . $set['foto_kepala_mts'] ); ?>" width="80%" alt=""><br><br>	
-					<h4>Nama Kepala Mts</h4>
-					<h6>Kepala Mts Daarul Qur'an</h6>
+					<h4><?= $set['nama_kepala_mts']; ?></h4>
+					<h6><?= $set['sub_kepala_mts'] ; ?></h6>
 				</div>
 				<div class="col-sm-3 text-center">
 					<img src="<?= base_url('assets/images/config/' . $set['foto_kepala_ma'] ); ?>" width="80%" alt=""><br><br>	
-					<h4>Nama Kepala MA</h4>
-					<h6>Kepala MA Daarul Qur'an</h6>
+					<h4><?= $set['nama_kepala_ma']; ?></h4>
+					<h6><?= $set['sub_kepala_ma'] ; ?></h6>
 				</div>
 			</div>
 			</div>
