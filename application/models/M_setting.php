@@ -137,6 +137,7 @@ class M_setting extends CI_Model {
 			'sejarah' => $this->input->post('sejarah')
 		];
 
+
 		$this->db->set($data);
 		$this->db->where('id',1);
 		$this->db->update('web');

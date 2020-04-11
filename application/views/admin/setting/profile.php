@@ -134,7 +134,7 @@
               <div class="col-md-12">
                <div class="form-group">
                   <label for="">Misi</label>
-                  <textarea name="misi" id="editor"><?= $setup['visi']; ?></textarea>
+                  <textarea name="misi" id="editor"><?= $setup['misi']; ?></textarea>
                 </div>
               </div>
             </div>
