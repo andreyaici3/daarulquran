@@ -124,7 +124,17 @@ class M_setting extends CI_Model {
 			'nama_kepala_mts' => htmlspecialchars($this->input->post('nama_mts',true)),
 			'sub_kepala_mts' => htmlspecialchars($this->input->post('sub_mts',true)),
 			'nama_kepala_ma' => htmlspecialchars($this->input->post('nama_ma',true)),
-			'sub_kepala_ma' => htmlspecialchars($this->input->post('sub_ma',true))
+			'sub_kepala_ma' => htmlspecialchars($this->input->post('sub_ma',true)),
+			'nama_lembaga' => htmlspecialchars($this->input->post('nama_lembaga', true)),
+			'no_lembaga' => htmlspecialchars($this->input->post('no_hp_lembaga',true)),
+			'alamat_lembaga' => htmlspecialchars($this->input->post('alamat',true)),
+			'status_akre' => htmlspecialchars($this->input->post('status_lembaga',true)),
+			'tahun_berdiri' => htmlspecialchars($this->input->post('tahun_berdiri',true)),
+			'jenjang_pend' => htmlspecialchars($this->input->post('jenjang',true)),
+			'status_lembaga' => htmlspecialchars($this->input->post('status_lembaga',true)),
+			'misi' => $this->input->post('misi'),
+			'visi' => $this->input->post('visi'),
+			'sejarah' => $this->input->post('sejarah')
 		];
 
 		$this->db->set($data);

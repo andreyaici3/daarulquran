@@ -81,8 +81,6 @@ class Setting extends CI_Controller {
 				fSukses('Data Berhasil Di update','setting/setProfile');
 				//untuk model
 
-			
-
 			}
 
 			_lib('admin/setting/profile', $data);		

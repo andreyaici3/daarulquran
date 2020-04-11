@@ -85,7 +85,63 @@
                    <input type="text" class="form-control" name="sub_ma" value="<?= $setup['sub_kepala_ma']; ?>">
                </div>   
             </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                  <label for="">Nama Lembaga</label>
+                  <input type="text" class="form-control" name="nama_lembaga" value="<?= $setup['nama_lembaga']; ?>">
+                </div>
+                <div class="form-group">
+                  <label for="">Alamat Lembaga</label>
+                  <input type="text" class="form-control" name="alamat" value="<?= $setup['alamat_lembaga']; ?>">
+                </div>
+                <div class="form-group">
+                  <label for="">Status Akreditas</label>
+                  <input type="text" class="form-control" name="status_akre" value="<?= $setup['status_akre']; ?>">
+                </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                  <label for="">No Hp</label>
+                  <input type="text" class="form-control" name="no_hp_lembaga" value="<?= $setup['no_lembaga']; ?>">
+                </div>
+                <div class="form-group">
+                  <label for="">Status Lembaga</label>
+                  <input type="text" class="form-control" name="status_lembaga" value="<?= $setup['status_lembaga']; ?>">
+                </div>
+                <div class="form-group">
+                  <label for="">Tahun Berdiri</label>
+                  <input type="text" class="form-control" name="tahun_berdiri" value="<?= $setup['tahun_berdiri']; ?>">
+                </div>
+            </div>
+            <div class="col-md-12">
+              <div class="form-group">
+                <label for="">Jenjang Pendidikan</label>
+                <input type="text" class="form-control" name="jenjang" value="<?= $setup['jenjang_pend']; ?>">
+              </div>
+            </div>
+            <div class="col-md-12">
+              <div class="form-group">
+                <label for="">Sejarah</label>
+                <textarea name="sejarah" style="resize: none;" cols="30" rows="8" class="form-control" style=""><?= $setup['sejarah']; ?></textarea>
+              </div>
+            </div>
+            <div class="col-md-12">
+               <div class="form-group">
+                  <label for="">Visi</label>
+                  <textarea style="resize: none;" name="visi" cols="30" rows="5" class="form-control"><?= $setup['visi']; ?></textarea>
+                </div>
+              </div>
+              <div class="col-md-12">
+               <div class="form-group">
+                  <label for="">Misi</label>
+                  <textarea name="misi" id="editor"><?= $setup['visi']; ?></textarea>
+                </div>
+              </div>
+            </div>
+            </div>
+            
         </div>
+
     </div>
     <button onclick="return confirm('Apakah anda yakin, ingin mengubah data.?')" type="submit" class="btn btn-primary mb-4">Simpan Perubahan</button><br><br>
 	<?= form_close(); ?>

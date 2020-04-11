@@ -49,31 +49,31 @@
 					<div class="col-sm-4">
 						<div class="form-group">
 							<label for="">Nama Lembaga</label>
-							<input type="text" disabled value="<?= $set['header-nav']; ?>" class="form-control">
+							<input type="text" disabled value="<?= $set['nama_lembaga']; ?>" class="form-control">
 						</div>
 						<div class="form-group">
 							<label for="">Alamat</label>
-							<textarea style="resize: none;" name="" id="" cols="30" rows="3" class="form-control" disabled><?= $set['alamat']; ?></textarea>
+							<textarea style="resize: none;" name="" id="" cols="30" rows="3" class="form-control" disabled><?= $set['alamat_lembaga']; ?></textarea>
 						</div>
 						<div class="form-group">
 							<label for="">No Telpon</label>
-							<input type="text" disabled value="<?= $set['telepon']; ?>" class="form-control">
+							<input type="text" disabled value="<?= $set['no_lembaga']; ?>" class="form-control">
 						</div>
 						<div class="form-group">
 							<label for="">Status Lembaga</label>
-							<input type="text" disabled value="Swasta" class="form-control">
+							<input type="text" disabled value="<?= $set['status_lembaga']; ?>" class="form-control" value="<?= $set['status_lembaga']; ?>">
 						</div>
 						<div class="form-group">
 							<label for="">Status Akreditasi</label>
-							<input type="text" disabled value="B" class="form-control">
+							<input type="text" disabled value="<?= $set['status_akre']; ?>" class="form-control">
 						</div>
 						<div class="form-group">
 							<label for="">Tahun Berdiri yayasan</label>
-							<input type="text" disabled value="1950" class="form-control">
+							<input type="text" disabled value="<?= $set['tahun_berdiri']; ?>" class="form-control">
 						</div>
 						<div class="form-group">
 							<label for="">Pendidikan yang tersedia</label>
-							<input type="text" disabled value="RA - Pondok Pesantren - MTs - MA" class="form-control">
+							<input type="text" disabled value="<?= $set['jenjang_pend']; ?>" class="form-control">
 						</div>
 
 					</div>
@@ -84,15 +84,15 @@
 						<br>
 						<div class="form-group">
 							<label for=""><h5>Sejarah</h5></label>
-							<textarea name="sejarah" id="" cols="30" rows="6" disabled="" class="form-control" style="color: black; resize: none;"><?= $set['sejarah']; ?></textarea>
+							<div class="blog_content" style="color: black; text-align: justify;"><?= $set['sejarah']; ?></div>
 						</div>
 						<div class="form-group">
 							<label for=""><h5>Visi</h5></label>
-							<textarea name="visi" id="" cols="30" rows="5" disabled="" class="form-control" style="color: black; resize: none;"><?= $set['visi']; ?></textarea>
+							<div class="blog_content" style="color: black; text-align: justify;"><?= $set['visi']; ?></div>
 						</div>
 						<div class="form-group">
 							<label for=""><h5>Misi</h5></label>
-							<textarea name="visi" id="" cols="30" rows="5" disabled="" class="form-control" style="color: black; resize: none;"><?= $set['misi']; ?></textarea>
+							<div class="blog_content" style="color: black; text-align: justify;"><?= $set['misi']; ?></div>
 						</div>
 					</div>
 			</div>
