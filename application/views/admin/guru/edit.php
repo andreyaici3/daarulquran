@@ -34,7 +34,7 @@
         	<div class="col-md-6">
 		    	<div class="form-group">
 	                <label>Tanggal Lahir</label>
-	                <input class="form-control" name="tanggal_lahir" placeholder="tanggal_lahir ... " id="tanggal_lahir" type="date" value="<?= $guru['tanggal_lahir']; ?>">
+	                <input class="form-control" name="tanggal_lahir" id="datepicker" value="<?= date('d-m-Y', $guru['tanggal_lahir']); ?>" autocomplete="off">
 	            </div>	
         	</div>
         	<div class="col-md-6">

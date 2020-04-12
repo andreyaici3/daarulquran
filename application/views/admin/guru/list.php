@@ -28,7 +28,7 @@
                     		<td><?= $mp['nama_guru']; ?></td>
                             <td><?= $mp['nip']; ?></td>
                     		<td><?= $mp['tempat_lahir']; ?></td>
-                    		<td><?= $mp['tanggal_lahir']; ?></td>
+                    		<td><?= date('d-m-Y', $mp['tanggal_lahir']); ?></td>
                     		<td><?= $mp['nama_mapel']; ?></td>
                     		<td><?= $mp['pendidikan']; ?></td>
                     		<td><a href="<?= base_url('guru/detail/' . $mp['id_guru']); ?>">Lihat Detail</a></td>

@@ -33,7 +33,7 @@
         	<div class="col-md-6">
 		    	<div class="form-group">
 	                <label>Tanggal Lahir</label>
-	                <input class="form-control" name="tanggal_lahir" placeholder="tanggal_lahir ... " id="dateTime" type="text" value="<?= set_value('tanggal_lahir'); ?>">
+	                <input class="form-control" id="datepicker" name="tanggal_lahir" placeholder="tanggal_lahir ... " id="dateTime" type="text" value="<?= set_value('tanggal_lahir'); ?>" autocomplete="off">
 	            </div>	
         	</div>
         	<div class="col-md-6">

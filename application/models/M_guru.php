@@ -6,42 +6,36 @@ class M_guru extends CI_Model
 
 	public function add()
 	{
-		$name = $_FILES['foto_guru']['name'];
-
-		if (file_exists(FCPATH . 'assets/images/guru/' . $name)) {
-			$ext = explode('.',$name);
-			$ext = end($ext);
-			$name = uniqid() . '.' .$ext;
-		}
-
 		$config = [
 			'upload_path' => './assets/images/guru/',
 			'allowed_types' => 'jpg|jpeg|gif|png',
-			'file_name' => $name,
+			'file_name' => uniqid() . '.jpg',
 			'max_size' => '2048'
 		];
 
 		$this->load->library('upload',$config);
 		$this->upload->initialize($config);
 
-
 		if ($this->upload->do_upload('foto_guru')) {
-			$data = [
+			$name = $config['file_name'];
+
+		} else {
+			$name = "default.jpg";
+		}
+
+		$data = [
 			'nip' => htmlspecialchars($this->input->post('nip',true)),
 			'nama_guru' => htmlspecialchars($this->input->post('nama_guru',true)),
 			'tempat_lahir' => htmlspecialchars($this->input->post('tempat_lahir',true)),
-			'tanggal_lahir' => htmlspecialchars($this->input->post('tanggal_lahir',true)),
+			'tanggal_lahir' => strtotime($this->input->post('tanggal_lahir')),
 			'mata_pelajaran' => htmlspecialchars($this->input->post('mapel',true)),
 			'pendidikan' => htmlspecialchars($this->input->post('pendidikan',true)),
 			'foto_guru' => $name
-		];
+			];
 
-			$this->db->insert('tbl_guru',$data);
-			fSukses('Data Guru Berhasil Ditambahkan','guru');
-
-		} else {
-			fGagal('Data Guru Gagal Ditambahkan','guru');
-		}
+		$this->db->insert('tbl_guru',$data);
+		fSukses('Data Guru Berhasil Ditambahkan','guru');
+		
 	}
 
 	public function getGuru($id)
@@ -95,7 +89,7 @@ class M_guru extends CI_Model
 			'nip' => htmlspecialchars($this->input->post('nip',true)),
 			'nama_guru' => htmlspecialchars($this->input->post('nama_guru',true)),
 			'tempat_lahir' => htmlspecialchars($this->input->post('tempat_lahir',true)),
-			'tanggal_lahir' => htmlspecialchars($this->input->post('tanggal_lahir',true)),
+			'tanggal_lahir' => strtotime($this->input->post('tanggal_lahir')),
 			'mata_pelajaran' => htmlspecialchars($this->input->post('mapel',true)),
 			'pendidikan' => htmlspecialchars($this->input->post('pendidikan',true)),
 			'foto_guru' => $foto
