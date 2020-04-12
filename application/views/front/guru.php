@@ -30,7 +30,7 @@
 								<div class="team_body">
 									<div class="team_title"><a href="#"><?= $gr['nama_guru']; ?></a></div>
 									<div class="team_subtitle"><?= $gr['nip']; ?></div>
-									<div class="team_subtitle"><?= $gr['tempat_lahir'] . ', ' . $gr['tanggal_lahir']; ?></div>
+									<div class="team_subtitle"><?= $gr['tempat_lahir'] . ', ' . date('d-m-Y', $guru['tanggal_lahir']); ?></div>
 									<div class="team_subtitle"><?= $gr['nama_mapel']; ?></div>
 									<div class="team_subtitle"><?= $gr['pendidikan']; ?></div>
 
