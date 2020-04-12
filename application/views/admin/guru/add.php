@@ -42,7 +42,7 @@
 	                <select name="mapel" class="form-control">
 	                	<option>--- Select Mapel ---</option>
 	                	<?php foreach ($mapel as $mp): ?>
-	                		<option value="<?= $mp['id']; ?>"><?= $mp['nama_mapel']; ?></option>
+	                		<option value="<?= $mp['id']; ?>"><?= $mp['kode_mapel']; ?></option>
 	                	<?php endforeach ?>
 	                </select>
 	            </div>	
