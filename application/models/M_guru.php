@@ -57,17 +57,21 @@ class M_guru extends CI_Model
 	{
 		$foto_lama = $this->input->post('foto_lama');
 		$id = $this->input->post('iden');
+		
 
 		if ($_FILES['foto_guru']['error'] == 4) {
 			$foto = $this->input->post('foto_lama');
 		} else {
 			$foto = $_FILES['foto_guru']['name'];
 
-			if (file_exists(FCPATH . 'assets/images/guru/' . $foto)) {
-				$ext = explode('.', $foto);
-				$ext = end($ext);
-				$foto = uniqid() . '.' .$ext;
+			if ($foto_lama != 'default.jpg') {
+				if (file_exists(FCPATH . 'assets/images/guru/' . $foto)) {
+					$ext = explode('.', $foto);
+					$ext = end($ext);
+					$foto = uniqid() . '.' .$ext;
+				}
 			}
+			
 
 			$config = [
 				'upload_path' => './assets/images/guru/',
@@ -79,8 +83,10 @@ class M_guru extends CI_Model
 			$this->load->library('upload',$config);
 			$this->upload->initialize($config);
 			$this->upload->do_upload('foto_guru');
-			if (file_exists(FCPATH . 'assets/images/guru/' . $foto_lama)) {
-				unlink(FCPATH . 'assets/images/guru/' . $foto_lama);
+			if ($guru['foto_guru'] != 'default.jpg') {
+				if (file_exists(FCPATH . 'assets/images/guru/' . $foto_lama)) {
+					unlink(FCPATH . 'assets/images/guru/' . $foto_lama);
+				}
 			}
 			
 		}
@@ -107,9 +113,12 @@ class M_guru extends CI_Model
 		// $id = $this->input->post('id');
 		$guru = $this->getGuru($id);
 		$foto_lama = $guru['foto_guru'];
-		if (file_exists(FCPATH . 'assets/images/guru/' . $foto_lama)) {
+		if ($foto_lama != 'default.jpg') {
+			if (file_exists(FCPATH . 'assets/images/guru/' . $foto_lama)) {
 				unlink(FCPATH . 'assets/images/guru/' . $foto_lama);
+			}	
 		}
+		
 		$this->db->where('id_guru',$id);
 		$this->db->delete('tbl_guru');
 		fSukses('Data Berhasil Dihapus','guru');
