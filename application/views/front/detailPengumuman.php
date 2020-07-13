@@ -21,8 +21,11 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-md-12 text-center">
-						<h2><?= $guru['judul_pengumuman']; ?></h2>
-						<h2><?= $guru['isi_pengumuman']; ?></h2><br>
+						<h2 align="justify"><?= $guru['judul_pengumuman']; ?></h2>
+						<br>
+						<p style="text-align: justify; color: black; font-size: 14px;">
+						<?= $guru['isi_pengumuman']; ?><br>
+						</p>
 					</div>
 
 				</div>
