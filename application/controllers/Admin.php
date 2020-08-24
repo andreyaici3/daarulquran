@@ -8,8 +8,8 @@ class Admin extends CI_Controller {
 		$sess = $this->session->userdata('cp_sess');
 		$math = $this->session->userdata('cp_math');
 		if (!$sess && !$math) {
-			echo "Login Dulu"; 
-			die;
+			$this->auth->redirect();
+			break;
 		}
 	}
 
