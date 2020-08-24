@@ -2,6 +2,16 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Admin extends CI_Controller {
+
+	public function __construct(){
+		parent::__construct();
+		$sess = $this->session->userdata('cp_sess');
+		$math = $this->session->userdata('cp_math');
+		if (!$sess && !$math) {
+			$this->auth->redirect();
+		}
+	}
+
 	public function index(){
 		$cek = $this->auth->level();
 		if ($cek == 1) {
