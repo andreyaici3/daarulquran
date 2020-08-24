@@ -39,7 +39,6 @@
 		                  <tr>
 		                    <th>No</th>
 		                    <th>Judul Pengumuman</th>
-		                    <th>Isi Pengumuman</th>
 		                    <th>Tanggal Dibuat</th>
 		                    <th>Aksi</th>
 		                  </tr>
@@ -49,7 +48,6 @@
 		                <tr>
 		                  <td><?= $i++ ?></td>
 		                  <td><?= $value->judul_pengumuman  ?></td>
-		                  <td><?= htmlspecialchars_decode($value->isi_pengumuman)  ?></td>
 		                  <td><?= date('d-m-Y', $value->tanggal_pengumuman ) ?></td>
 		                  <td align="center">
 		                    <span style="color: white">
