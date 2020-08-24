@@ -9,6 +9,7 @@ class Admin extends CI_Controller {
 		$math = $this->session->userdata('cp_math');
 		if (!$sess && !$math) {
 			$this->auth->redirect();
+			die;
 		}
 	}
 
