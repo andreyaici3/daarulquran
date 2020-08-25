@@ -51,6 +51,7 @@
 		                  <td><?= date('d-m-Y', $value->tanggal_pengumuman ) ?></td>
 		                  <td align="center">
 		                    <span style="color: white">
+		                    	<a class="btn btn-sm btn-primary" target="_blank" href="<?= base_url('pengumuman/detail/' . $value->id_pengumuman )  ?>"><i class="fas fa-eye" ></i></a>
 		                    	<a class="btn btn-sm btn-success" href="<?= base_url('admin/pengumuman/edit/' . $this->mapel->encodeUrl($value->id_pengumuman)) ?>"><i class="fas fa-edit" ></i></a>
 		                      <a class="btn btn-sm btn-danger hpsModalPengumuman" data-id="<?= $value->id_pengumuman  ?>" data-toggle="modal" data-target="#modal-sm" data-key="<?= $this->mapel->encodeUrl($value->id_pengumuman)  ?>" data-toggle="modal" data-target="#modal-sm"><i class="fas fa-trash" ></i></a>
 		                    </span>
