@@ -49,8 +49,8 @@ class M_auth extends CI_Model {
 	}
 
 	public function identifier($id){
-		$data = $this->db->get_where('tbl_user',['id' => $id])->result();
-		return $data[0];
+		$data = $this->db->get_where('tbl_user',['id' => $id])->row();
+		return $data;
 	}
 
 	public function sessionProses(){

@@ -13,28 +13,21 @@ class Admin extends CI_Controller {
 	}
 
 	public function index(){
-		if ($cek = $this->auth->level()) {
-			$cek = $this->auth->level();
-			if ($cek == 1) {
-				$data = [
-					'title' => "Dashboard",
-					'page'	=> "admin",
-					'mapel' => $this->mapel->mapelNum(),
-					'guru' => $this->guru->guruNum(),
-					'kelas' => $this->kelas->kelasNum(),
-					'siswa' => $this->siswa->siswaNum(),
-					'sess'	=> $this->auth->sessionProses()
-				];
-				$this->backend->view('admin', $data);
-			}else {
-				$this->auth->redirect();
-			}
-		} else {
+		$cek = $this->auth->level();
+		if ($cek == 1) {
+			$data = [
+				'title' => "Dashboard",
+				'page'	=> "admin",
+				'mapel' => $this->mapel->mapelNum(),
+				'guru' => $this->guru->guruNum(),
+				'kelas' => $this->kelas->kelasNum(),
+				'siswa' => $this->siswa->siswaNum(),
+				'sess'	=> $this->auth->sessionProses()
+			];
+			$this->backend->view('admin', $data);
+		}else {
 			$this->auth->redirect();
 		}
-
-		
-		
 	}
 
 	public function mapel($id = NULL, $key = NULL){
