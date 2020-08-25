@@ -9,26 +9,32 @@ class Admin extends CI_Controller {
 		$math = $this->session->userdata('cp_math');
 		if (!$sess && !$math) {
 			$this->auth->redirect();
-			die;
 		}
 	}
 
 	public function index(){
-		$cek = $this->auth->level();
-		if ($cek == 1) {
-			$data = [
-				'title' => "Dashboard",
-				'page'	=> "admin",
-				'mapel' => $this->mapel->mapelNum(),
-				'guru' => $this->guru->guruNum(),
-				'kelas' => $this->kelas->kelasNum(),
-				'siswa' => $this->siswa->siswaNum(),
-				'sess'	=> $this->auth->sessionProses()
-			];
-			$this->backend->view('admin', $data);
-		}else {
+		if ($cek = $this->auth->level()) {
+			$cek = $this->auth->level();
+			if ($cek == 1) {
+				$data = [
+					'title' => "Dashboard",
+					'page'	=> "admin",
+					'mapel' => $this->mapel->mapelNum(),
+					'guru' => $this->guru->guruNum(),
+					'kelas' => $this->kelas->kelasNum(),
+					'siswa' => $this->siswa->siswaNum(),
+					'sess'	=> $this->auth->sessionProses()
+				];
+				$this->backend->view('admin', $data);
+			}else {
+				$this->auth->redirect();
+			}
+		} else {
 			$this->auth->redirect();
 		}
+
+		
+		
 	}
 
 	public function mapel($id = NULL, $key = NULL){
