@@ -39,7 +39,6 @@
             </a>
           </li>
           <li 
-
              <?php 
                   $url = $this->uri->segment(2);
                   if ($url == 'mapel' || $url == 'kelas' || $url == 'guru' || $url == 'siswa') {
@@ -61,7 +60,8 @@
                     echo "class='nav-link'";
                   }
                ?> >
-              <i class="nav-icon fas fa-copy"></i>
+
+             <i class="nav-icon fas fa-digital-tachograph"></i>
               <p>
                 Master Data
                 <i class="fas fa-angle-left right"></i>
@@ -156,7 +156,7 @@
 
            >
             <a href="#" <?= $cont  ?>>
-              <i class="nav-icon fas fa-copy"></i>
+              <i class="nav-icon fas fa-file-signature"></i>
               <p>Content<i class="fas fa-angle-left right"></i>
               </p>
             </a>
@@ -210,7 +210,7 @@
                     echo "class='nav-link'";
                   }
                ?> >
-              <i class="nav-icon fas fa-copy"></i>
+              <i class="nav-icon fas fa-user-plus"></i>
               <p>
                 PPDB
                 <i class="fas fa-angle-left right"></i>
@@ -235,6 +235,14 @@
                   <p>List PPDB</p>
                 </a>
               </li>
+            </ul>
+          <li class="nav-item has-treeview">
+            <a href="<?= base_url('auth/logout') ?>" class="nav-link" >
+              <i class="nav-icon fas fa-sign-out-alt"></i>
+              <p>Logout</p>
+            </a>
+          </li>
+              
 
       </nav>
       <!-- /.sidebar-menu -->

@@ -10,6 +10,9 @@ class Auth extends CI_Controller {
 		} else {
 			$this->auth->login();
 		}
-		
+	}
+
+	public function logout(){
+		$this->auth->logout();
 	}
 }
