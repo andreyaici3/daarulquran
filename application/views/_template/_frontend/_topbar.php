@@ -20,7 +20,7 @@
 						</ul>
 
 						<div class="top_bar_login ml-auto">
-							<div class="login_button"><a href="http://127.0.0.1/daarulquran/auth">Login</a></div>
+							<div class="login_button"><a href="<?= base_url('auth')  ?>">Login</a></div>
 						</div>
 					</div>
 				</div>
